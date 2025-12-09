@@ -1,0 +1,25 @@
+{
+  "carousel": [
+    {
+      "id": 1,
+      "title": "BEST OF REGALIA",
+      "subtitle": "Luxury Without Limits",
+      "button": "Explore Collection",
+      "image": "corousel/necklace.png"
+    },
+    {
+      "id": 2,
+      "title": "NECKLACES THAT SHINE",
+      "subtitle": "Elegance Crafted For Every Occasion",
+      "button": "Shop Necklaces",
+      "image": "corousel/necklace.png"
+    },
+    {
+      "id": 3,
+      "title": "THE NEW ARRIVALS",
+      "subtitle": "Handpicked Styles Just For You",
+      "button": "Discover Now",
+      "image": "corousel/necklace.png"
+    }
+  ]
+}
