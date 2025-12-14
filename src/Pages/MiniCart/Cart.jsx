@@ -9,12 +9,13 @@ export const Cart = ({
   removeFromCart,
   getCartTotal,
   setStep,
+  deleteFromCart
 }) => {
   return (
     <>
       <div className="flex flex-col lg:flex-row justify-between items-center px-7 py-5 border-b ">
         <h2 className="text-2xl font-bold text-gray-800">Your Cart</h2>
-        <button onClick={onClose} className="text-gray-600 hover:text-red-600">
+        <button onClick={onClose} className="text-gray-600 hover:text-black">
           <IoClose size={28} />
         </button>
       </div>
@@ -41,7 +42,7 @@ export const Cart = ({
                 {/* image */}
                 <div className="flex items-center gap-4 w-[50%]">
                   <img
-                    src={item.image}
+                    src={item.image[0]}
                     alt={item.title}
                     className="w-15 h-12 object-contain"
                   />
@@ -67,17 +68,18 @@ export const Cart = ({
                   <span className="w-3 text-center">{item.quantity}</span>
 
                   <button
+                  disabled={item.quantity >= 10}
                     onClick={() => addToCart({ ...item, quantity: 1 })}
-                    className="text-md px-2 hover:text-green-600"
-                  >
+                     className={`text-md px-2 ${item.quantity >= 10 ? "opacity-40 ": "hover:text-green-600"}`}>
+                  
                     +
                   </button>
                 </div>
 
                 {/* Delete */}
                 <button
-                  onClick={() => removeFromCart(item)}
-                  className="text-gray-400 hover:text-red-600"
+                  onClick={() => deleteFromCart(item)}
+                  className="text-gray-400 hover:text-black"
                 >
                   <FaTrashAlt size={14} />
                 </button>

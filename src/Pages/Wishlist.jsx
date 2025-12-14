@@ -9,6 +9,11 @@ import { FaHeart } from "react-icons/fa6";
 export const Wishlist = () => {
   const { wishlistItems, removeFromWishlist } = useWishlist();
   const { addToCart } = useCart();
+ 
+
+
+
+
 
   return (
     <>
@@ -62,7 +67,7 @@ export const Wishlist = () => {
                   {/* left side */}
                   <div className="flex items-center gap-9 w-[50%]">
                     <img
-                      src={item.image}
+                      src={item.image[0]}
                       alt={item.title}
                       className="w-20 h-20 object-contain"
                     />

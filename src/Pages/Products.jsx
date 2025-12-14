@@ -11,6 +11,7 @@ import { Footer } from "../Components/common/Footer";
 import { FiFilter } from "react-icons/fi";
 import { useLocation, useNavigate } from "react-router-dom";
 import { Navigate } from "react-router-dom";
+import { Sorting } from "../Components/common/Sorting";
 
 export const Products = ({ search, setSearch }) => {
   const { data, fetchAllProducts } = useContext(DataContext);
@@ -21,7 +22,9 @@ export const Products = ({ search, setSearch }) => {
   const { categoryOnlyData } = getData();
   const location = useLocation();
   const navigate = useNavigate();
+  const [sortedData, setSortedData] = useState([]);
 
+  // categoory route
   useEffect(() => {
     if (location.state?.category) {
       setCategory(location.state.category);
@@ -37,15 +40,33 @@ export const Products = ({ search, setSearch }) => {
       item.price <= priceRange[1]
   );
 
+  // category change
   const handleCategoryChange = (e) => {
     setCategory(e.target.value);
     // console.log(category)
   };
+
+  // pagination page
   const pageHandler = (selectedPage) => {
     setPage(selectedPage);
   };
 
+  // dynamic page
   const dynamicPage = Math.ceil(filteredData?.length / 8);
+
+// sorting validation
+  const handleSort = (value) => {
+    let sorted = [...filteredData];
+
+    if (value === "lowToHigh") {
+      sorted.sort((a, b) => a.price - b.price);
+    }
+    if (value === "highToLow") {
+      sorted.sort((a, b) => b.price - a.price);
+    }
+
+    setSortedData(sorted);
+  };
 
   return (
     <div className="bg-gray-50 min-h-screen">
@@ -68,7 +89,7 @@ export const Products = ({ search, setSearch }) => {
         </div>
 
         {/* filter */}
-        <div className=" flex justify-between items-center  px-2 w-full">
+        <div className="flex justify-between items-center px-2 w-full">
           <button
             onClick={() => setIsFilterOpen((prev) => !prev)}
             className="flex items-center gap-2 border border-gray-300 px-4 py-2 rounded-lg text-gray-700 font-medium "
@@ -87,6 +108,8 @@ export const Products = ({ search, setSearch }) => {
             search={search}
             setSearch={setSearch}
           />
+{/* sorting */}
+          <Sorting onSort={handleSort} />
         </div>
 
         {data?.length > 0 ? (
@@ -96,7 +119,7 @@ export const Products = ({ search, setSearch }) => {
               {filteredData?.length > 0 ? (
                 <div className="flex flex-col justify-center items-center w-full">
                   <div className="grid grid-cols-2 md:grid-cols-4 gap-5 mt-10">
-                    {filteredData
+                    {(sortedData.length > 0 ? sortedData : filteredData)
                       ?.slice(page * 8 - 8, page * 8)
                       .map((product, index) => (
                         <ProductCard key={index} product={product} />

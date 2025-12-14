@@ -9,43 +9,50 @@ import { FaHeart } from "react-icons/fa6";
 
 export const ProductCard = ({ product, showCartBtn = true }) => {
   const { cartItems, addToCart } = useCart();
-  const {wishlistItems, toggleWishlist} = useWishlist()
+  const { wishlistItems, toggleWishlist } = useWishlist();
 
   const isItemInCart = cartItems.find((cartItem) => cartItem.id === product.id);
-   const isItemInWishlist = wishlistItems.find((wishlistItem) => wishlistItem.id === product.id)
+  const isItemInWishlist = wishlistItems.find(
+    (wishlistItem) => wishlistItem.id === product.id
+  );
 
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   return (
-    <div
-      className="rounded-xl hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 cursor-pointer flex flex-col h-full bg-transparent  group"
-    >
+   <div className="rounded-xl flex flex-col h-full bg-transparent cursor-pointer group">
+
       <div className="relative flex items-center justify-center bg-transparent rounded-t-xl overflow-hidden aspect-square">
-     
-      {/* wishlist heart */}
-      <button
-      aria-label="Add product in your wishlist"
-      onClick={() => toggleWishlist(product)}
-       className={`absolute top-3 right-3 text-xl z-10 opacity-0 group-hover:opacity-100 transition-all duration-300
+        {/* wishlist heart */}
+        <button
+          aria-label="Add product in your wishlist"
+          onClick={() => toggleWishlist(product)}
+          className={`absolute top-5 right-5 text-xl z-10 opacity-0 group-hover:opacity-100 transition-all duration-300
         ${isItemInWishlist ? "opacity-100" : "opacity-0"}`}
-       >
-        {
-          isItemInWishlist ? (
-            <FaHeart className="text-black"/>
+        >
+          {isItemInWishlist ? (
+            <FaHeart className="text-black" />
           ) : (
-          <FaRegHeart className="text-black"/>
-          )
-        }
-      </button>
+            <FaRegHeart className="text-black" />
+          )}
+        </button>
 
         {/* img */}
         <img
-          src={product.image}
+          src={product.image[0]}
           alt={product.image}
+          // width={400}
+          // height={300}
+          onClick={() => navigate(`/products/${product.id}`)}
+          className="object-contain  p-2 md:p-5 transition-transform duration-500 h-[400px] w-[500px] group-hover:opacity-0 group-hover:scale-105 "
+        />
+
+        <img
+          src={product.image[1]}
+          alt="hover"
           width={400}
           height={300}
-          onClick={()=>navigate(`/products/${product.id}`)}
-          className="object-contain  p-2 md:p-5 transition-transform duration-500 hover:scale-105 h-[300px] w-[400px]"
+          onClick={() => navigate(`/products/${product.id}`)}
+          className="object-contain p-2 md:p-5 absolute top-0 left-0 w-full h-full opacity-0 transition-opacity duration-300 group-hover:opacity-100 group-hover:scale-105"
         />
       </div>
 
@@ -58,26 +65,29 @@ export const ProductCard = ({ product, showCartBtn = true }) => {
           ₹{product.price}
         </p>
 
-        
-  {showCartBtn ? ( isItemInCart ? (<QuantityButton item={isItemInCart}/>) : <button
-          onClick={() => addToCart({...product, quantity : 1})}
-          className="flex items-center justify-center gap-1 md:w-full border border-black text-black  hover:bg-black  hover:text-white py-2  rounded-lg  font-medium transition-all duration-300 w-auto text-sm md:text-base "
-        >
-          <IoCartOutline className="md:w-5 md:h-5 w-3 h-3" />
-          Add to Cart
-        </button> )
-   : ""}
-       
+        {showCartBtn ? (
+          isItemInCart ? (
+            <QuantityButton item={isItemInCart} />
+          ) : (
+            <button
+            
+              onClick={() => addToCart({ ...product, quantity: 1 })}
+              className="flex items-center justify-center gap-1 md:w-full border border-black text-black  hover:bg-black  hover:text-white py-2  rounded-lg  font-medium transition-all duration-300 w-auto text-sm md:text-base "
+            >
+              <IoCartOutline className="md:w-5 md:h-5 w-3 h-3" />
+              Add to Cart
+            </button>
+          )
+        ) : (
+          ""
+        )}
       </div>
     </div>
   );
 };
 
-
-
-
-
-{/*
+{
+  /*
   
   
   {showCartBtn ? ( isItemInCart ? (CartQuantity item={temInCart}/) : <button
@@ -92,4 +102,5 @@ export const ProductCard = ({ product, showCartBtn = true }) => {
 
   
   
-  */}
+  */
+}

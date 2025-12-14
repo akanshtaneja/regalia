@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import { Footer } from "../Components/common/Footer";
 import { useParams } from "react-router-dom";
 import axios from "axios";
@@ -11,6 +11,9 @@ import { GoToCart } from "../Components/Button/GoToCart";
 import { useWishlist } from "../Context/WishlistContext";
 import { FaRegHeart } from "react-icons/fa";
 import { FaHeart } from "react-icons/fa6";
+import { SuggestedProduct } from "../Components/common/SuggestedProduct";
+import { DataContext } from "../Context/DataContext";
+import { DetailPageImage } from "../Components/common/DetailPageImage";
 
 export const SingleProduct = () => {
   const { cartItems } = useCart();
@@ -18,6 +21,9 @@ export const SingleProduct = () => {
   const params = useParams();
   const [singleProduct, setSingleProduct] = useState("");
   const [expand, setExpand] = useState(false);
+const {id} = params
+const { data} = useContext(DataContext);
+const [selectedImg, setSelectedImage] = useState("")
 
   const getSingleProduct = async () => {
     try {
@@ -31,6 +37,15 @@ export const SingleProduct = () => {
   useEffect(() => {
     getSingleProduct();
   }, []);
+
+
+  useEffect(()=>{
+    if (singleProduct?.image?.length>0) {
+      setSelectedImage(singleProduct.image[0])
+    }
+  }, [singleProduct])
+
+
 
   const orignalPrice = Math.round(
     singleProduct.price + singleProduct.price * (singleProduct.discount / 100)
@@ -51,29 +66,37 @@ export const SingleProduct = () => {
           <Breadcrumb title={singleProduct.title} />
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mt-10">
-            <div className="flex justify-center md:justify-start">
-              <div className="overflow-hidden absolute">
+            
+            {/* <div className="flex justify-center md:justify-start"> */}
+              {/* <div className="overflow-hidden absolute"> */}
                 {/* Heart */}
-                <button
-                  onClick={() => toggleWishlist(singleProduct)}
-                  className="absolute top-2 right-2 text-xl z-10 transition-all duration-300"
-                >
-                  {isItemInWishlist ? (
-                    <FaHeart className="text-black" />
-                  ) : (
-                    <FaRegHeart className="text-black" />
-                  )}
-                </button>
+                {/* <button */}
+                  {/* onClick={() => toggleWishlist(singleProduct)} */}
+                  {/* className="absolute top-2 right-2 text-xl z-10 transition-all duration-300" */}
+                {/* > */}
+                  {/* {isItemInWishlist ? ( */}
+                    {/* <FaHeart className="text-black" /> */}
+                  {/* ) : ( */}
+                    {/* <FaRegHeart className="text-black" /> */}
+                  {/* )} */}
+                {/* </button>
 
                 <img
-                  src={singleProduct.image}
+                  src={singleProduct.image[0]}
                   alt={singleProduct.title}
                   className="rounded-xl max-w-[350px] w-full transition-transform duration-300 hover:scale-110"
                 />
               </div>
-            </div>
+            </div> */}
+  <DetailPageImage  
+  singleProduct={singleProduct}
+  selectedImg={selectedImg}
+  setSelectedImage={setSelectedImage}
+  toggleWishlist={toggleWishlist}
+  isItemInWishlist={isItemInWishlist} />
+           
 
-            {/* Left side */}
+           {/* right */}
             <div className="flex flex-col gap-6">
               <h1 className="md:text-2xl font-bold text-gray-800">
                 {singleProduct.title}
@@ -138,7 +161,9 @@ export const SingleProduct = () => {
           </video>
         </div>
       )}
-
+      {singleProduct && (
+  <SuggestedProduct allProducts={data} product={singleProduct} />
+)}
       <Footer />
     </>
   );

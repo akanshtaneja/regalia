@@ -18,9 +18,11 @@ export const QuantityButton = ({item}) => {
         </span>
 
         <button
+        disabled={item.quantity >= 10}
           onClick={() => addToCart({ ...item, quantity: 1 })}
-          className="text-lg font-bold px-2 hover:text-green-600"
+           className={`text-lg font-bold px-2 ${item.quantity >= 10 ? "opacity-40 ": "hover:text-green-600"}`}
         >
+        
           +
         </button>
       </div>

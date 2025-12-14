@@ -9,7 +9,6 @@ export const GoToCart = ({ item }) => {
 
   return (
     <div className="flex flex-col items-start gap-3">
-
       {/* Quantity btn */}
       <div className="flex items-center gap-3 border rounded-lg px-4 py-2 w-fit">
         <button
@@ -22,10 +21,10 @@ export const GoToCart = ({ item }) => {
         <span className="w-6 text-center font-semibold text-gray-700">
           {item.quantity}
         </span>
-
         <button
+          disabled={item.quantity >= 10}
           onClick={() => addToCart({ ...item, quantity: 1 })}
-          className="text-lg font-bold px-2 hover:text-green-600"
+          className={`text-lg font-bold px-2 ${item.quantity >= 10 ? "opacity-40 ": "hover:text-green-600"}`}
         >
           +
         </button>
@@ -34,11 +33,12 @@ export const GoToCart = ({ item }) => {
       {/* Go to Cart Btn */}
       <button
         onClick={() => setIsCartOpen(true)}
-        className="flex items-center justify-center gap-2 bg-black hover:bg-gray-900 text-white px-5 py-2 rounded-lg text-lg font-semibold shadow-md hover:shadow-xl transition-all duration-300 w-fit" >
+        className="flex items-center justify-center gap-2 bg-black hover:bg-gray-900 text-white px-5 py-2 rounded-lg text-lg font-semibold shadow-md hover:shadow-xl transition-all duration-300 w-fit"
+      >
         <IoCartOutline className="w-5 h-5" />
         Go to Cart
       </button>
-{isCartOpen ? <MiniCart onClose={() => setIsCartOpen(false)}/> : null  }
+      {isCartOpen ? <MiniCart onClose={() => setIsCartOpen(false)} /> : null}
     </div>
   );
 };

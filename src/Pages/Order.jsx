@@ -6,8 +6,13 @@ import { CiShoppingCart } from "react-icons/ci";
 export const Order = () => {
   const [savedOrders, setSavedOrders] = useState([]);
 
+
+  // login id
+    const userId = JSON.parse(localStorage.getItem("LoginId"))
+    console.log("login Id", userId)
+
   useEffect(() => {
-    const orderPlaced = JSON.parse(localStorage.getItem("orders")) || [];
+    const orderPlaced = JSON.parse(localStorage.getItem(`orders_${userId}`)) || [];
     setSavedOrders(orderPlaced);
   }, []);
 
@@ -88,7 +93,7 @@ export const Order = () => {
                   {/* left image*/}
                   <div className="flex items-center gap-4 w-[40%]">
                     <img
-                      src={order.product.image}
+                      src={order.product.image[0]}
                       alt={order.product.title}
                       className="w-20 h-20 object-contain"
                     />

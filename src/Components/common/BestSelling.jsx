@@ -11,7 +11,7 @@ export const BestSelling = () => {
   const { categoryOnlyData } = getData();
   const navigate = useNavigate()
 
-  const selectedId = [22, 45, 17, 10, 25, 32, 37, 41, 9, 39];
+  const selectedId = [22, 45, 17, 10, 25, 32, 37, 41];
 
   const customProducts = data?.filter((item) =>
     selectedId.includes(Number(item.id))
@@ -44,7 +44,7 @@ export const BestSelling = () => {
 
         {data?.length > 0 ? (
           <div className="flex flex-col items-center w-full">
-            <div className=" grid grid-cols-2 md:grid-cols-5 gap-4">
+            <div className=" grid grid-cols-2 md:grid-cols-4 gap-4">
               {customProducts.map((item) => (
                 <ProductCard key={item.id} product={item} showCartBtn={false} />
               ))}

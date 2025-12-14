@@ -44,14 +44,26 @@ export const Payment = ({subtotal, shipping, total, setStep, platformFee, cartIt
     return Object.keys(err).length === 0;
   };
 
+
+  
+    // login id
+    const userId = JSON.parse(localStorage.getItem("LoginId"))
+    console.log("login Id", userId)
+
+
   const handleConfirm = () => {
     if (!validate()) return;
 
 
 
-    // orders
-    const previousOrders = JSON.parse(localStorage.getItem("orders")) || [];
+    
+    // prev orders
+    const previousOrders = JSON.parse(localStorage.getItem(`orders_${userId}`)) || [];
+    console.log("prev orders", previousOrders)
 
+
+
+    // new orders
     const newOrders = cartItems.map((item) => ({
       id: generateOrderId(),
       product: item,
@@ -60,11 +72,14 @@ export const Payment = ({subtotal, shipping, total, setStep, platformFee, cartIt
       date: new Date().toISOString(),
     }));
 
+
+    // Save new order
     localStorage.setItem(
-      "orders",
+      `orders_${userId}`,
       JSON.stringify([...newOrders, ...previousOrders])
     );
 
+    
     setStep(4);
     clearCart();
   };

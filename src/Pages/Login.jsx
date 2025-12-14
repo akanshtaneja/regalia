@@ -50,7 +50,8 @@ export const Login = ({setUser}) => {
         setApiMessage(res.data.message);
 
         if (res.data.message === "Login Successful") {
-          localStorage.setItem("user", JSON.stringify(res.data.user));
+          localStorage.setItem("user", JSON.stringify(res.data.user));        
+          localStorage.setItem("LoginId", JSON.stringify(res.data.user.id) )  // login id
           setUser(res.data.user);
           setTimeout(() => navigate("/"), 800);
         }
