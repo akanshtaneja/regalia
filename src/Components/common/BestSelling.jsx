@@ -18,8 +18,8 @@ export const BestSelling = () => {
   );
 
   return (
-    <div className="bg-gray-50 min-h-screen">
-      <div className="max-w-5xl mx-auto px-5 py-12">
+    <div className="bg-gray-50 ">
+      <div className="max-w-5xl mx-auto px-5 pt-12 pb-7">
 
         {/* heading */}
         <div className="text-center mb-12">
@@ -52,9 +52,9 @@ export const BestSelling = () => {
 
             <Link
               to="/products"
-              className="bg-black  text-white px-8 py-2 rounded-lg text-lg font-semibold shadow-md hover:shadow-xl transition-all duration-300 mt-10 inline-block hover:bg-gray-900"
+              className="bg-black  text-white px-8 py-2 rounded-lg text-lg font-semibold shadow-md  transition-all duration-300 mt-10 inline-block hover:bg-gray-900 "
             >
-              Start Shopping
+              Explore Collection
             </Link>
           </div>
         ) : (

@@ -20,7 +20,7 @@ export const DetailPageImage = ({singleProduct, selectedImg, setSelectedImage, t
         ))}
       </div>
 
-      {/* big image */}
+      {/* large image */}
       <div className="relative">
 
         {/* wishlist */}

@@ -15,11 +15,19 @@ export const Return = () => {
   const [orderId, setOrderId] = useState("");
   const [showPopup, setShowPopup] = useState(false);
 
+
+  // login id
+    const userId = JSON.parse(localStorage.getItem("LoginId"))
+    console.log("login Id", userId)
+
+
   // order id from local storage
   useEffect(() => {
-    const orderPlaced = JSON.parse(localStorage.getItem("orders")) || [];
+    const orderPlaced = JSON.parse(localStorage.getItem(`orders_${userId}`)) || [];
     setSavedOrders(orderPlaced);
+    console.log(`order plced : ${orderPlaced}`)
   }, []);
+
 
   const validateForm = () => {
     let tempErrors = {};
@@ -122,7 +130,7 @@ export const Return = () => {
             </div>
 
             <div>
-              <label htmlfor="orderId" className="text-sm font-semibold text-gray-700">
+              <label htmlFor="orderId" className="text-sm font-semibold text-gray-700">
                 Order ID *
               </label>
 

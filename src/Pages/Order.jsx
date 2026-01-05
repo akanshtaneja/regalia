@@ -6,13 +6,13 @@ import { CiShoppingCart } from "react-icons/ci";
 export const Order = () => {
   const [savedOrders, setSavedOrders] = useState([]);
 
-
   // login id
-    const userId = JSON.parse(localStorage.getItem("LoginId"))
-    console.log("login Id", userId)
+  const userId = JSON.parse(localStorage.getItem("LoginId"));
+  console.log("login Id", userId);
 
   useEffect(() => {
-    const orderPlaced = JSON.parse(localStorage.getItem(`orders_${userId}`)) || [];
+    const orderPlaced =
+      JSON.parse(localStorage.getItem(`orders_${userId}`)) || [];
     setSavedOrders(orderPlaced);
   }, []);
 
@@ -102,6 +102,14 @@ export const Order = () => {
                         <span className="font-semibold">Order ID:</span>{" "}
                         {order.id}
                       </p>
+                      {order.product.size && (
+                        <p className="text-sm text-gray-500 mt-1">
+                          Size:{" "}
+                          <span className="font-semibold">
+                            {order.product.size}
+                          </span>
+                        </p>
+                      )}
                       <p className="text-sm text-gray-500 mt-1">
                         Qty: {order.quantity}
                       </p>

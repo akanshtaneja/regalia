@@ -109,11 +109,11 @@ export const FilterSection = ({
                   setCategory("All");
                   setPriceRange([0, 50000]);
                 }}
-                className="w-full bg-black text-white py-2 rounded-md font-medium hover:bg-gray-900 transition">
+                className="w-full bg-black text-white py-2 rounded-md font-medium hover:bg-gray-900 transition"
+              >
                 Clear Filters
               </button>
             </div>
-            
           </motion.div>
         </>
       )}

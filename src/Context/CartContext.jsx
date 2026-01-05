@@ -21,49 +21,72 @@ export const CartProvider = ({ children }) => {
 
   // ----ADD ----
   const addToCart = (item) => {
-    const userId = JSON.parse(localStorage.getItem("LoginId"));
-    const isItemInCart = cartItems.find((cartItem) => cartItem.id === item.id);
-    const totalQuantity = cartQuantity();
-    if (totalQuantity >= 50) {
-      errorMessage("You cannot add more than 50 products!");
-    } else {
-      if (isItemInCart) {
-        const updatedCart = cartItems.map((cartItem) =>
-          cartItem.id === item.id
-            ? { ...cartItem, quantity: cartItem.quantity + item.quantity }
-            : cartItem
-        );
+  const userId = JSON.parse(localStorage.getItem("LoginId"));
+  const incomingQty = item.quantity ?? 1;
 
-        setCartItems(updatedCart);
-        localStorage.setItem(`Cart_${userId}`, JSON.stringify(updatedCart));
-      } else {
-        const newItemCartUpdate = [
-          ...cartItems,
-          { ...item, quantity: item.quantity },
-        ];
-        setCartItems(newItemCartUpdate);
-        localStorage.setItem(
-          `Cart_${userId}`,
-          JSON.stringify(newItemCartUpdate)
-        );
+  const isItemInCart = cartItems.find(
+    (cartItem) =>
+      cartItem.id === item.id && cartItem.size === item.size
+  );
+
+  let updatedCart;
+
+  if (isItemInCart) {
+    updatedCart = cartItems.map((cartItem) => {
+      if (
+        cartItem.id === item.id &&
+        cartItem.size === item.size
+      ) {
+        return {
+          ...cartItem,
+          quantity: cartItem.quantity + incomingQty, 
+        };
       }
-    }
-  };
+      return cartItem;
+    });
+  } else {
+    updatedCart = [
+      ...cartItems,
+      { ...item, quantity: incomingQty }, 
+    ];
+  }
+
+  setCartItems(updatedCart);
+  localStorage.setItem(
+    `Cart_${userId}`,
+    JSON.stringify(updatedCart)
+  );
+};
+
+const updateCartQuantity = (item, quantity) => {
+  const userId = JSON.parse(localStorage.getItem("LoginId"));
+
+  const updatedCart = cartItems.map((cartItem) =>
+    cartItem.id === item.id && cartItem.size === item.size
+      ? { ...cartItem, quantity }
+      : cartItem
+  );
+
+  setCartItems(updatedCart);
+  localStorage.setItem(`Cart_${userId}`, JSON.stringify(updatedCart));
+};
 
   // ---REMOVE----
   const removeFromCart = (item) => {
     const userId = JSON.parse(localStorage.getItem("LoginId"));
-    const isItemInCart = cartItems.find((cartItem) => cartItem.id === item.id);
+    const isItemInCart = cartItems.find(
+      (cartItem) => cartItem.id === item.id && cartItem.size === item.size
+    );
 
     if (isItemInCart.quantity === 1) {
       const newItemCartUpdate = cartItems.filter(
-        (cartItem) => cartItem.id !== item.id
+        (cartItem) => !(cartItem.id === item.id && cartItem.size === item.size)
       );
       setCartItems(newItemCartUpdate);
       localStorage.setItem(`Cart_${userId}`, JSON.stringify(newItemCartUpdate));
     } else {
       const updatedCart = cartItems.map((cartItem) =>
-        cartItem.id === item.id
+        cartItem.id === item.id && cartItem.size === item.size
           ? { ...cartItem, quantity: cartItem.quantity - 1 }
           : cartItem
       );
@@ -83,18 +106,19 @@ export const CartProvider = ({ children }) => {
   // del from cart
   const deleteFromCart = (item) => {
     const userId = JSON.parse(localStorage.getItem("LoginId"));
-    const updatedCart = cartItems.filter((cartItem) => cartItem.id !== item.id);
+    const updatedCart = cartItems.filter(
+      (cartItem) => !(cartItem.id === item.id && cartItem.size === item.size)
+    );
     setCartItems(updatedCart);
     localStorage.setItem(`Cart_${userId}`, JSON.stringify(updatedCart));
   };
 
-
-  // clear cart 
-  const clearCart = () =>{
-  const userId = JSON.parse(localStorage.getItem("LoginId"));
-  setCartItems([]);
-  localStorage.setItem(`Cart_${userId}`, JSON.stringify([]));
-  }
+  // clear cart
+  const clearCart = () => {
+    const userId = JSON.parse(localStorage.getItem("LoginId"));
+    setCartItems([]);
+    localStorage.setItem(`Cart_${userId}`, JSON.stringify([]));
+  };
 
   return (
     <CartContext.Provider
@@ -105,7 +129,8 @@ export const CartProvider = ({ children }) => {
         getCartTotal,
         deleteFromCart,
         cartQuantity,
-        clearCart
+        clearCart,
+        updateCartQuantity,
       }}
     >
       {children}

@@ -1,13 +1,12 @@
 import React, { useEffect, useRef, useState } from "react";
 import { useCart } from "../../Context/CartContext";
-
 import { Checkout } from "./Checkout";
 import { Payment } from "./Payment";
 import { SuccessPopup } from "./SuccessPopup";
 import { Cart } from "./Cart";
 import { EmptyCart } from "./EmptyCart";
 
-export const MiniCart = ({ onClose }) => {
+export const MiniCart = ({ onClose}) => {
   const {
     cartItems,
     addToCart,
@@ -59,6 +58,8 @@ export const MiniCart = ({ onClose }) => {
             setStep={setStep}
             checkoutData={checkoutData}
             setCheckoutData={setCheckoutData}
+            onClose={onClose}
+            cartItems={cartItems}
           />
         ) : (
           <Payment
@@ -70,6 +71,7 @@ export const MiniCart = ({ onClose }) => {
             setCheckoutData={setCheckoutData}
             cartItems={cartItems}
             clearCart={clearCart}
+            onClose={onClose}
           />
         )}
       </div>

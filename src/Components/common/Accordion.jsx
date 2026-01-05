@@ -19,9 +19,7 @@ export const Accordion = ({ data }) => {
               onClick={() => toggleItem(item.id)}
               className="w-full flex justify-between items-center p-4 hover:bg-gray-50 transition"
             >
-              <span className="font-medium text-gray-800">
-                {item.question}
-              </span>
+              <span className="font-medium text-gray-800">{item.question}</span>
               <span
                 className={`text-gray-500 transition-transform duration-300 ${
                   activeItem === item.id ? "rotate-180" : ""
@@ -33,9 +31,7 @@ export const Accordion = ({ data }) => {
 
             <div
               className={`grid transition-all duration-300 ${
-                activeItem === item.id
-                  ? "grid-rows-[1fr]"
-                  : "grid-rows-[0fr]"
+                activeItem === item.id ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
               }`}
             >
               <div className="overflow-hidden">

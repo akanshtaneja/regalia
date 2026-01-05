@@ -7,7 +7,7 @@ import { useWishlist } from "../../Context/WishlistContext";
 import { FaRegHeart } from "react-icons/fa";
 import { FaHeart } from "react-icons/fa6";
 
-export const ProductCard = ({ product, showCartBtn = true }) => {
+export const ProductCard = ({ product, showCartBtn = false }) => {
   const { cartItems, addToCart } = useCart();
   const { wishlistItems, toggleWishlist } = useWishlist();
 
@@ -19,14 +19,13 @@ export const ProductCard = ({ product, showCartBtn = true }) => {
   const navigate = useNavigate();
 
   return (
-   <div className="rounded-xl flex flex-col h-full bg-transparent cursor-pointer group">
-
+    <div className="rounded-xl flex flex-col h-full bg-transparent cursor-pointer group">
       <div className="relative flex items-center justify-center bg-transparent rounded-t-xl overflow-hidden aspect-square">
         {/* wishlist heart */}
         <button
           aria-label="Add product in your wishlist"
           onClick={() => toggleWishlist(product)}
-          className={`absolute top-5 right-5 text-xl z-10 opacity-0 group-hover:opacity-100 transition-all duration-300
+          className={`absolute top-3 right-3 md:top-6 md:right-6 text-xl z-10 opacity-0 group-hover:opacity-100 transition-all duration-300
         ${isItemInWishlist ? "opacity-100" : "opacity-0"}`}
         >
           {isItemInWishlist ? (
@@ -70,7 +69,6 @@ export const ProductCard = ({ product, showCartBtn = true }) => {
             <QuantityButton item={isItemInCart} />
           ) : (
             <button
-            
               onClick={() => addToCart({ ...product, quantity: 1 })}
               className="flex items-center justify-center gap-1 md:w-full border border-black text-black  hover:bg-black  hover:text-white py-2  rounded-lg  font-medium transition-all duration-300 w-auto text-sm md:text-base "
             >

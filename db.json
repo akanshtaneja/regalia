@@ -5,6 +5,7 @@
       "title": "Nail Bangle Bracelet",
       "price": 2258,
       "category": ["Bracelet"],
+      "sizes": ["16 cm", "17 cm", "18cm", "19 cm", "20 cm", "21 cm", "22 cm", "23 cm"],
       "description": "Keep things bold and fashionable with this stunning, gold-plated bracelet for women featuring crystals. This elegant demi-fine jewellery piece allows you to make a fashion statement. Designed for everyday modern elegance, this gold-plated bracelet adds charm to your wrist. Feminine and fine, this gold bangle bracelet for women is ideal for stacking and wearing solo. Its exquisite look gives it depth and finesse, while the hypoallergenic build promises longevity.",
       "image": ["/imgs/img1.webp", "/imgs/img51.webp"],
       "rating": 4.6,
@@ -25,6 +26,7 @@
       "title": "Cupid’s Rose 925 Silver Ring",
       "price": 3397,
       "category": ["Rings"],
+      "sizes": ["48 mm", "50 mm", "52 mm", "54 mm", "56 mm", "58 mm", "60 mm"],
       "description": "The Cupid’s Rose Glow Ring is a delicate and elegant addition to any jewellery collection. Crafted from 925 sterling silver with rhodium plating, it features a classic solitaire design that exudes romance and sophistication. Durable and versatile, this ring adds subtle sparkle and timeless elegance, perfect for everyday wear or special occasions, complementing any outfit.",
       "image": ["/imgs/img3.webp", "/imgs/img53.webp"],
       "rating": 4.8,
@@ -44,7 +46,7 @@
       "id": 5,
       "title": "Zircon & Bow Stud Earrings",
       "price": 3055,
-      "category":["Earrings"] ,
+      "category": ["Earrings"],
       "description": "Delicate and charming, these 18k gold plated Zircon & Bow studs feature sparkling cubic zirconia stones set in a dainty bow design. Their polished gold finish ensures lasting shine, while waterproof and anti-tarnish properties keep them looking pristine. Perfect for adding a subtle sparkle to both casual and festive outfits, these earrings bring playful elegance to your jewellery collection..",
       "image": ["/imgs/img5.webp", "/imgs/img55.webp"],
       "rating": 4.8,
@@ -55,6 +57,7 @@
       "title": "Plain Stackable Bangle Bracelet",
       "price": 2117,
       "category": ["Bracelet"],
+      "sizes": ["16 cm", "17 cm", "18cm", "19 cm", "20 cm", "21 cm", "22 cm", "23 cm"],
       "description": "This gold-plated stackable bangle bracelet for women blends contemporary with simplicity. It's an effortlessly chic modern bracelet and can be paired with your everyday basics, keeping the vibe bold without being too overpowering. Its versatility complements every outfit, be it bold or minimal. Our gold bangle bracelet glows with charm and graceful balance. This anti-tarnish, elegant piece is a perfect accent for routine use. It's the perfect blend of chic, comfort and durability..",
       "image": ["/imgs/img6.webp", "/imgs/img56.webp"],
       "rating": 4.5,
@@ -65,6 +68,7 @@
       "title": "Bar Layered Chain Bracelet",
       "price": 1869,
       "category": ["Bracelet"],
+      "sizes": ["16 cm", "17 cm", "18cm", "19 cm", "20 cm", "21 cm", "22 cm", "23 cm"],
       "description": "Bar Charm Bracelet is a chic and versatile piece crafted from stainless steel with a polished gold plated jewellery finish. Its sleek bar design, paired with delicate charm, makes it a standout in demi-fine jewellery, perfect for adding subtle sophistication to your everyday collection. Ideal among bracelets for women and gold bracelets for women, this bracelet balances minimalism with elegance, making it a must-have accessory for modern styling.",
       "image": ["/imgs/img7.webp", "/imgs/img57.webp"],
       "rating": 4.5,
@@ -74,7 +78,8 @@
       "id": 8,
       "title": "Gilded Rings Layered Necklace",
       "price": 1899,
-      "category": [ "Necklace"] ,
+      "category": ["Necklace"],
+      "sizes": ["45 cm"],
       "description": "Some layers bring elegance to your look without even trying. The Gilded Rings Layered Necklace features two delicately balanced chains, each anchored with sleek, interlocking ring charms that represent connection, balance, and effortless style. Finished in a radiant 18k gold tone plating, it adds a warm, luminous glow that feels refined yet easy enough for everyday wear. Designed for women who love aesthetic jewellery with a modern, symbolic twist, this layered piece brings soft movement and a curated, ready-to-style look. Whether worn alone for understated elegance or built into your favorite gold layered stack, it delivers the kind of quiet luxury that suits every moment.",
       "image": ["/imgs/img8.webp", "/imgs/img58.webp"],
       "rating": 4.4,
@@ -84,7 +89,8 @@
       "id": 9,
       "title": "Hearts All Over Bracelet",
       "price": 2299,
-      "category": [ "Bracelet"] ,
+      "category": ["Bracelet"],
+      "sizes": ["16 cm", "17 cm", "18cm", "19 cm", "20 cm", "21 cm", "22 cm", "23 cm"],
       "description": "The Hearts All Over bracelet features dainty heart charms crafted to add an accent of refinement to everyday wear. It's tarnish-resistant, stainless steel material makes it as reliable as it is pretty. This gold-plated jewellery is designed to add an edge to your look. Perfect for those looking for minimalism. It’s a timeless classic thoughtfully curated to enhance your everyday basics. This exquisite female gold bracelet brings an understated glow that fits right in with your stack.",
       "image": ["/imgs/img9.webp", "/imgs/img59.webp"],
       "rating": 4.6,
@@ -94,7 +100,8 @@
       "id": 10,
       "title": "Golden Infinity Necklace",
       "price": 2235,
-      "category": [ "Necklace"] ,
+      "category": ["Necklace"],
+      "sizes": ["45 cm"],
       "description": "The Golden Infinity Necklace features a timeless infinity pendant on a sleek gold-tone chain, symbolizing eternal elegance. Crafted in stainless steel with a radiant 18k gold tone, this waterproof and anti-tarnish necklace effortlessly enhances casual, office, or evening outfits, adding a modern yet classic touch to both everyday and festive ensembles.",
       "image": ["/imgs/img10.webp", "/imgs/img60.webp"],
       "rating": 4.7,
@@ -104,7 +111,8 @@
       "id": 11,
       "title": "Cuff Bracelet With Ring",
       "price": 1899,
-      "category": [ "Bracelet"] ,
+      "category": ["Bracelet"],
+      "sizes": ["16 cm", "17 cm", "18cm", "19 cm", "20 cm", "21 cm", "22 cm", "23 cm"],
       "description": "The Cuff Bracelet With Ring is a striking piece that blends modern artistry with timeless elegance. Designed as a bold expression of individuality, it carries a graceful charm that makes it stand out in any jewellery collection. Its unique form adds a sense of mystery and allure, making it perfect for moments when you want your accessories to speak louder than words. A meaningful gift, it celebrates beauty, confidence, and creativity in one elegant design.",
       "image": ["/imgs/img11.webp", "/imgs/img61.webp"],
       "rating": 4.8,
@@ -114,7 +122,8 @@
       "id": 12,
       "title": "Double Drop Delicacy Gold Chain Necklace",
       "price": 4500,
-      "category": [ "Necklace"] ,
+      "category": ["Necklace"],
+      "sizes": ["45 cm"],
       "description": "The Double Drop Delicacy Gold Chain Necklace is a graceful statement of elegance and modern femininity. Featuring two sparkling cubic zirconia drops set in 18k gold-plated stainless steel, its short chain design highlights subtle sophistication. Perfect for layering or wearing solo, this versatile necklace adds shimmer and charm to both everyday and evening outfits, making it a refined jewellery essential.",
       "image": ["/imgs/img12.webp", "/imgs/img62.webp"],
       "rating": 4.7,
@@ -124,54 +133,59 @@
       "id": 13,
       "title": "Single Pearl Necklace",
       "price": 2286,
-      "category": [ "Necklace"] ,
+      "category": ["Necklace"],
+      "sizes": ["45 cm"],
       "description": "Elevate your elegance with this Single Pearl Necklace, featuring a lustrous white pearl set on a polished 18k gold-tone stainless steel chain. Waterproof and anti-tarnish, it offers lasting beauty and effortless style. Perfect for both casual and formal occasions, this necklace adds a touch of sophistication and classic charm to any outfit, making it an essential piece in every jewellery collection.",
       "image": ["/imgs/img13.webp", "/imgs/img63.webp"],
       "rating": 4.8,
       "discount": 23
     },
     {
-     "id": 14,
+      "id": 14,
       "title": "Multi-layered Beaded Bracelet",
       "price": 2099,
       "category": ["Bracelet"],
+      "sizes": ["16 cm", "17 cm", "18cm", "19 cm", "20 cm", "21 cm", "22 cm", "23 cm"],
       "description": "Designed with multiple strands of dainty golden beads, this bracelet adds layered elegance to your wrist. Each bead is polished for a gentle shine, while the secure clasp ensures durability and comfort. Its multi-layered design creates a textured appeal, blending tradition with modern craftsmanship in one graceful piece.",
       "image": ["/imgs/img14.webp", "/imgs/img64.webp"],
       "rating": 4.9,
       "discount": 20
     },
     {
-        "id": 15,
+      "id": 15,
       "title": "Double layer choker necklace",
       "price": 2432,
       "category": ["Necklace"],
+      "sizes": ["45 cm"],
       "description": "The Double Layer Choker Necklace exudes modern sophistication with its sleek layered design. Crafted in stainless steel with a radiant 18k gold tone, this waterproof and anti-tarnish necklace adds a chic accent to any outfit. Perfect for casual, office, or evening wear, it elevates both everyday and festive ensembles with contemporary elegance.",
       "image": ["/imgs/img15.webp", "/imgs/img65.webp"],
       "rating": 4.5,
       "discount": 23
     },
-   {
+    {
       "id": 16,
       "title": "Double Chain Delight Necklace",
       "price": 2346,
       "category": ["Necklace"],
+      "sizes": ["45 cm"],
       "description": "The Double Chain Delight Necklace features two elegant gold-tone chains layered for a chic, contemporary look. Crafted in stainless steel with a radiant 18k gold tone, this waterproof and anti-tarnish necklace enhances casual, office, or evening outfits, adding a touch of modern sophistication and versatile charm to both everyday and festive ensembles.",
       "image": ["/imgs/img16.webp", "/imgs/img66.webp"],
       "rating": 4.9,
       "discount": 8
     },
     {
-       "id": 17,
-      "title": "Stellar Bloom 9KT Gold Lab Grown Diamond Pendan",
+      "id": 17,
+      "title": "Stellar Bloom 9KT Gold Lab Grown Diamond Pendant",
       "price": 5277,
       "category": ["Necklace"],
+      "sizes": ["45 cm"],
       "description": "Elegant star-shaped pendant featuring intricate geometric detailing for a modern, sophisticated look. Perfect for daily wear or special occasions, this statement piece enhances any outfit with subtle charm. Ideal for fashion-forward individuals seeking a minimalist yet eye-catching accessory that complements diverse styles effortlessly.",
       "image": ["/imgs/img17.webp", "/imgs/img67.webp"],
       "rating": 4.6,
       "discount": 15
     },
     {
-       "id": 18,
+      "id": 18,
       "title": "Tear Drop Earrings",
       "price": 2441,
       "category": ["Earrings"],
@@ -191,7 +205,7 @@
       "discount": 28
     },
     {
-       "id": 20,
+      "id": 20,
       "title": "Dangling Gold Chain Drop Earrings",
       "price": 2390,
       "category": ["Earrings"],
@@ -201,7 +215,7 @@
       "discount": 20
     },
     {
-       "id": 21,
+      "id": 21,
       "title": "Gold Chain Drop Hook Earrings",
       "price": 2659,
       "category": ["Earrings"],
@@ -241,7 +255,7 @@
       "discount": 38
     },
     {
-       "id": 25,
+      "id": 25,
       "title": "Golden Hexagon Earrings",
       "price": 1899,
       "category": ["Earrings"],
@@ -270,17 +284,18 @@
       "rating": 4.8,
       "discount": 14
     },
-      {
+    {
       "id": 28,
       "title": "Delicate Moonstone Necklace",
       "price": 2580,
       "category": ["Necklace"],
+      "sizes": ["45 cm"],
       "description": "Ethereal and elegant, the Delicate Moonstone Necklace features a luminous white cubic zirconia pendant set in a radiant gold-tone finish. Its minimalist design exudes sophistication, making it perfect for adding a subtle sparkle to everyday outfits or a refined touch to evening ensembles.",
       "image": ["/imgs/img28.webp", "/imgs/img78.webp"],
       "rating": 4.9,
       "discount": 27
     },
-     {
+    {
       "id": 29,
       "title": "Athena Solitaire Hoop Earrings",
       "price": 2258,
@@ -290,31 +305,34 @@
       "rating": 4.8,
       "discount": 17
     },
-      {
+    {
       "id": 30,
       "title": "Multiple Stones Necklace",
       "price": 2580,
       "category": ["Necklace"],
+      "sizes": ["45 cm"],
       "description": "The Multiple Stones Necklace exudes timeless elegance with its delicate station design adorned with sparkling cubic zirconia. Crafted in stainless steel with a radiant 18k gold tone, this waterproof and anti-tarnish necklace adds subtle sophistication to any outfit. Perfect for casual, office, or evening wear, it enhances both everyday and festive ensembles with refined, versatile charm.",
       "image": ["/imgs/img30.webp", "/imgs/img80.webp"],
       "rating": 4.7,
       "discount": 32
     },
-   {
+    {
       "id": 31,
       "title": "Cherry Flower Necklace",
       "price": 5826,
       "category": ["Necklace"],
+      "sizes": ["45 cm"],
       "description": "The Cherry Flower Necklace features delicate pink and white cubic zirconia blossoms on a radiant 18k gold-tone chain, evoking feminine charm and elegance. Crafted in stainless steel with a waterproof and anti-tarnish finish, this necklace adds a playful yet sophisticated accent to casual, office, or evening outfits, making it perfect for everyday wear or special occasions.",
       "image": ["/imgs/img31.webp", "/imgs/img81.webp"],
       "rating": 4.6,
       "discount": 18
     },
-     {
+    {
       "id": 32,
       "title": "Pink Quartz Necklace",
       "price": 1749,
       "category": ["Necklace"],
+      "sizes": ["45 cm"],
       "description": "The Pink Quartz Pendant Necklace radiates feminine elegance with its soft, pastel charm. Crafted in stainless steel with a radiant 18k gold tone, this waterproof and anti-tarnish necklace features a delicate pink synthetic stone for subtle sophistication. Perfect for casual, office, or evening wear, it adds a graceful, versatile accent to both everyday and festive ensembles.",
       "image": ["/imgs/img32.webp", "/imgs/img82.webp"],
       "rating": 4.8,
@@ -325,16 +343,18 @@
       "title": "Heart Rays Necklace",
       "price": 2346,
       "category": ["Necklace"],
+      "sizes": ["45 cm"],
       "description": "The Heart Rays Pendant Necklace radiates charm and elegance with its heart-inspired design. Crafted in stainless steel with a radiant 18k gold tone, this waterproof and anti-tarnish necklace adds a delicate, eye-catching accent to any outfit. Perfect for casual, office, or evening wear, it enhances both everyday and festive ensembles with a modern, feminine touch.",
       "image": ["/imgs/img33.webp", "/imgs/img83.webp"],
       "rating": 4.9,
       "discount": 28
     },
-     {
+    {
       "id": 34,
       "title": "Crimped Golden Kada Bracelet",
       "price": 2875,
       "category": ["Bracelet"],
+      "sizes": ["16 cm", "17 cm", "18cm", "19 cm", "20 cm", "21 cm", "22 cm", "23 cm"],
       "description": "Elevate your style with this exquisite gold-plated bracelet, a perfect blend of sophistication and timeless charm. Crafted with meticulous attention to detail, this bracelet features a lustrous gold-plated finish that captures the light beautifully, adding a touch of radiance to any outfit. The bracelet boasts a delicate yet durable design, making it ideal for both everyday wear and special occasions. Its smooth, polished surface is complemented by a secure clasp, ensuring a comfortable fit and lasting wear.",
       "image": ["/imgs/img34.webp", "/imgs/img84.webp"],
       "rating": 4.8,
@@ -345,6 +365,7 @@
       "title": "Ball Cuff Bangle Bracelet",
       "price": 2258,
       "category": ["Bracelet"],
+      "sizes": ["16 cm", "17 cm", "18cm", "19 cm", "20 cm", "21 cm", "22 cm", "23 cm"],
       "description": "A sleek open bangle crafted with polished golden spheres on each end, blending minimal elegance with modern edge. Lightweight and durable, its open cuff design ensures comfort and effortless wearability. With its refined simplicity, this bracelet is a versatile piece that complements both casual and formal looks.",
       "image": ["/imgs/img35.webp", "/imgs/img85.webp"],
       "rating": 4.9,
@@ -355,36 +376,40 @@
       "title": "Butterfly Charm Cuff Bracelet",
       "price": 2258,
       "category": ["Bracelet"],
+      "sizes": ["16 cm", "17 cm", "18cm", "19 cm", "20 cm", "21 cm", "22 cm", "23 cm"],
       "description": "Butterfly Charm Cuff Bracelet adds a playful yet elegant touch to your look with its delicate butterfly charm and sleek open cuff design. Crafted from stainless steel and finished with radiant 18k gold plating, this piece embodies the essence of demi-fine jewellery: durable, stylish, and timeless. A standout in bracelets for women, it strikes the perfect balance between playful charm and refined sophistication, making it a versatile pick for those who love gold bracelets for women and the subtle elegance of gold plated jewellery.",
       "image": ["/imgs/img36.webp", "/imgs/img86.webp"],
       "rating": 4.5,
       "discount": 12
     },
-     {
+    {
       "id": 37,
       "title": "Dainty Flower Bracelet",
       "price": 1744,
-      "category":["Bracelet"],
+      "category": ["Bracelet"],
+      "sizes": ["16 cm", "17 cm", "18cm", "19 cm", "20 cm", "21 cm", "22 cm", "23 cm"],
       "description": "Dainty Flower Bracelet is a delicate and elegant piece that adds a touch of femininity to any outfit. Crafted from stainless steel with a lustrous gold plated jewellery finish, its dainty floral charms make it a standout in demi-fine jewellery. Perfect for those who appreciate subtle design, it is a versatile addition to bracelets for women and gold bracelets for women, combining everyday wearability with graceful style.",
       "image": ["/imgs/img37.webp", "/imgs/img87.webp"],
       "rating": 4.5,
       "discount": 22
     },
-     {
+    {
       "id": 38,
       "title": "Minimalist Gold Band Ring",
       "price": 2250,
       "category": ["Rings"],
-"description": "Discover the timeless allure of our exquisite gold rings, designed to add a touch of sophistication and luxury to any jewelry collection. Crafted from high-quality gold, these rings offer a radiant glow and enduring elegance, making them perfect for both everyday wear and special occasions.",
+     "sizes": ["48 mm", "50 mm", "52 mm", "54 mm", "56 mm", "58 mm", "60 mm"],
+      "description": "Discover the timeless allure of our exquisite gold rings, designed to add a touch of sophistication and luxury to any jewelry collection. Crafted from high-quality gold, these rings offer a radiant glow and enduring elegance, making them perfect for both everyday wear and special occasions.",
       "image": ["/imgs/img38.webp", "/imgs/img88.webp"],
       "rating": 4.7,
       "discount": 10
     },
-      {
+    {
       "id": 39,
       "title": "Gold Beads Harmony Ring",
       "price": 3950,
       "category": ["Rings"],
+      "sizes": ["48 mm", "50 mm", "52 mm", "54 mm", "56 mm", "58 mm", "60 mm"],
       "description": "The Gold Beads Harmony Ring blends bold artistry with timeless elegance. Crafted from stainless steel and finished in a radiant 18k gold tone, this statement ring features bead-inspired detailing that adds texture and dimension. Waterproof and anti-tarnish, it’s designed for long-lasting brilliance. Perfect for festive occasions or chic evening outings, this ring effortlessly elevates any jewellery collection.",
       "image": ["/imgs/img39.webp", "/imgs/img89.webp"],
       "rating": 4.9,
@@ -395,38 +420,42 @@
       "title": "Stone Helen Gold Ring",
       "price": 3750,
       "category": ["Rings"],
+      "sizes": ["48 mm", "50 mm", "52 mm", "54 mm", "56 mm", "58 mm", "60 mm"],
       "description": "The Stone Helen Gold Ring brings together timeless charm and modern elegance. Designed with two sparkling cubic zirconia stones set on a sleek 18k gold tone band, this adjustable jewellery piece is perfect for everyday sophistication or dressing up for special occasions. With waterproof and anti-tarnish properties, it stays radiant and durable through daily wear.",
       "image": ["/imgs/img40.webp", "/imgs/img90.webp"],
       "rating": 4.9,
       "discount": 28
     },
-     {
+    {
       "id": 41,
       "title": "Delicate Stone Studded Band Ring",
       "price": 3564,
       "category": ["Rings"],
+      "sizes": ["48 mm", "50 mm", "52 mm", "54 mm", "56 mm", "58 mm", "60 mm"],
       "description": "The Delicate Diamond Band is an elegant jewellery piece crafted from stainless steel with 18k gold plating. Featuring sparkling white cubic zirconia stones, it is waterproof and anti-tarnish for everyday wear. Its slim, refined design makes it perfect for stacking or wearing solo, adding a touch of subtle sparkle and timeless sophistication to any outfit or jewellery collection.",
       "image": ["/imgs/img41.webp", "/imgs/img91.webp"],
       "rating": 4.9,
       "discount": 15
     },
-      {
+    {
       "id": 42,
       "title": "Stones Band Ring",
       "price": 2580,
       "category": ["Rings"],
+      "sizes": ["48 mm", "50 mm", "52 mm", "54 mm", "56 mm", "58 mm", "60 mm"],
       "description": "The Stones Band Ring is a classic jewellery piece crafted from stainless steel with 18k gold plating. Adorned with sparkling white cubic zirconia stones, it is waterproof and anti-tarnish for everyday wear. Its elegant eternity design adds timeless sparkle and sophistication, making it perfect for stacking, wearing solo, or elevating both casual and formal outfits.",
       "image": ["/imgs/img42.webp", "/imgs/img92.webp"],
       "rating": 4.9,
       "discount": 20
     },
-      {
+    {
       "id": 43,
-      "title": "Textured Matte Gold Band Ring",
+      "title" : "" ,
       "price": 2117,
       "category": ["Rings"],
+      "sizes": ["48 mm", "50 mm", "52 mm", "54 mm", "56 mm", "58 mm", "60 mm"],
       "description": "The Textured Matte Gold Band Ring is a contemporary jewellery piece crafted from stainless steel with 18k gold plating. Its matte, textured finish adds understated sophistication while being waterproof and anti-tarnish for everyday wear. Perfect for stacking or wearing solo, this versatile ring elevates both casual and formal outfits, making it a stylish addition to any jewellery collection.",
-      "image":["/imgs/img43.webp", "/imgs/img93.webp"],
+      "image": ["/imgs/img43.webp", "/imgs/img93.webp"],
       "rating": 4.9,
       "discount": 12
     },
@@ -435,46 +464,51 @@
       "title": "Unique Wavy Ring",
       "price": 1975,
       "category": ["Rings"],
+      "sizes": ["48 mm", "50 mm", "52 mm", "54 mm", "56 mm", "58 mm", "60 mm"],
       "description": "The Unique Wavy Ring is a bold yet versatile jewellery piece crafted in stainless steel with an 18k gold tone finish. Its fluid wave-inspired design adds a modern, artistic touch to your look. Waterproof and anti-tarnish, this ring is designed for effortless wear - whether for daily styling or special outings. Adjustable in size, it offers both comfort and statement-making elegance.",
       "image": ["/imgs/img44.webp", "/imgs/img94.webp"],
       "rating": 4.9,
       "discount": 18
     },
-     {
+    {
       "id": 45,
       "title": "Infinity Adjustable Gold Ring",
       "price": 1925,
       "category": ["Rings"],
+      "sizes": ["48 mm", "50 mm", "52 mm", "54 mm", "56 mm", "58 mm", "60 mm"],
       "description": "The Infinity Adjustable Gold Ring is a sleek jewellery piece crafted from stainless steel with 18k gold plating. Its infinity-inspired design symbolizes elegance and continuity, while being waterproof and anti-tarnish for everyday wear. Adjustable and versatile, this ring is perfect for stacking or wearing solo, adding a modern and sophisticated touch to casual, office, or evening outfits.",
       "image": ["/imgs/img45.webp", "/imgs/img95.webp"],
       "rating": 4.9,
       "discount": 16
     },
-      {
+    {
       "id": 46,
       "title": "Golden Serpent Ring",
       "price": 1923,
       "category": ["Rings"],
+      "sizes": ["48 mm", "50 mm", "52 mm", "54 mm", "56 mm", "58 mm", "60 mm"],
       "description": "The Golden Serpent Ring is a bold jewellery piece crafted from stainless steel with 18k gold plating. Its sculptural serpent design makes a striking statement while being waterproof and anti-tarnish for everyday wear. Perfect for adding edgy elegance to any outfit, this adjustable ring combines contemporary artistry with versatile style, making it a standout addition to any jewellery collection.",
       "image": ["/imgs/img46.webp", "/imgs/img96.webp"],
       "rating": 4.9,
       "discount": 22
     },
-   {
+    {
       "id": 47,
       "title": "Spiral Three Layer Gold Ring",
       "price": 2975,
       "category": ["Rings"],
+      "sizes": ["48 mm", "50 mm", "52 mm", "54 mm", "56 mm", "58 mm", "60 mm"],
       "description": "Elevate your look with the Spiral Three Layer Gold Ring, a bold yet elegant accessory designed to make a statement. Crafted from stainless steel with an 18k gold tone plating, this waterproof and anti-tarnish ring ensures long-lasting shine and durability. Its unique spiral three-layer design brings a modern twist to classic fashion rings, making it the perfect piece to transition effortlessly from day to night.",
       "image": ["/imgs/img47.webp", "/imgs/img97.webp"],
       "rating": 4.9,
       "discount": 20
     },
-     {
+    {
       "id": 48,
       "title": "Emerald Thick & Double Thin Curb Chain Stackable Necklace",
       "price": 3326,
       "category": ["Necklace"],
+      "sizes": ["48 mm", "50 mm", "52 mm", "54 mm", "56 mm", "58 mm", "60 mm"],
       "description": "Striking and versatile, the Emerald Thick & Double Thin Curb Chain Stackable Necklace redefines statement layering. Featuring a vivid green emerald set against bold curb chains with 18k gold plating, it blends luxe detail with edgy sophistication. Designed for stacking or wearing solo, this necklace brings a pop of colour and modern elegance, making it a standout addition to any jewellery collection.",
       "image": ["/imgs/img48.webp", "/imgs/img98.webp"],
       "rating": 4.9,
@@ -485,17 +519,19 @@
       "title": "White Gemstone Gold Chain Necklace",
       "price": 2450,
       "category": ["Necklace"],
+      "sizes": ["45 cm"],
       "description": "The White Gemstone Gold Chain Necklace is a timeless statement of elegance. Featuring a sparkling white cubic zirconia set in 18k gold-plated stainless steel, this short necklace adds a touch of shimmer to any ensemble. Perfect for layering or wearing solo, it enhances both casual and dressy outfits with understated sophistication, making it a versatile addition to your jewellery collection.",
       "image": ["/imgs/img49.webp", "/imgs/img99.webp"],
       "rating": 4.9,
       "discount": 18
     },
-      {
+    {
       "id": 50,
       "title": "Sparkling Elegance Stone Necklace",
       "price": 2363,
       "category": ["Necklace"],
-"description": "The Sparkling Elegance Stone Necklace is a chic and sophisticated lariat design featuring four dazzling cubic zirconia stones. Crafted in 18k gold-plated stainless steel, it adds refined shimmer and modern charm to any outfit. Perfect for layering or wearing solo, this versatile necklace elevates both casual and evening ensembles with a contemporary, fashion-forward elegance.",
+      "sizes": ["45 cm"],
+      "description": "The Sparkling Elegance Stone Necklace is a chic and sophisticated lariat design featuring four dazzling cubic zirconia stones. Crafted in 18k gold-plated stainless steel, it adds refined shimmer and modern charm to any outfit. Perfect for layering or wearing solo, this versatile necklace elevates both casual and evening ensembles with a contemporary, fashion-forward elegance.",
       "image": ["/imgs/img50.webp", "/imgs/img100.webp"],
       "rating": 4.9,
       "discount": 15

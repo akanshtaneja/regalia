@@ -9,121 +9,136 @@ export const Cart = ({
   removeFromCart,
   getCartTotal,
   setStep,
-  deleteFromCart
+  deleteFromCart,
 }) => {
+  const platformFee = 7;
+
   return (
     <>
-      <div className="flex flex-col lg:flex-row justify-between items-center px-7 py-5 border-b ">
-        <h2 className="text-2xl font-bold text-gray-800">Your Cart</h2>
-        <button onClick={onClose} className="text-gray-600 hover:text-black">
-          <IoClose size={28} />
+      {/* Header*/}
+      <div className="px-4 py-2 flex justify-between items-center border-b">
+        <p
+          onClick={onClose}
+          className="text-xs text-blue-600 cursor-pointer hover:underline"
+        >
+          ← Continue Shopping
+        </p>
+        <button onClick={onClose}>
+          <IoClose size={20} />
         </button>
       </div>
 
-      <div className="flex h-full overflow-hidden">
-        {/* cart items list*/}
-        <div className="flex-1 flex flex-col overflow-y-auto">
-          <div className="py-4 px-7">
-            <p
-              onClick={onClose}
-              className="text-blue-600 text-sm cursor-pointer hover:underline"
-            >
-              ← Continue Shopping
+      
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 px-4 py-3 h-full overflow-hidden">
+        
+        {/* left side*/}
+        <div className="lg:col-span-2 space-y-3 overflow-y-auto pr-1">
+          {/* cart items */}
+          {cartItems.length === 0 ? (
+            <p className="text-sm text-gray-500 text-center py-10">
+              Your cart is empty
             </p>
-          </div>
-
-          {/* list* */}
-          <div className="px-7 divide-y">
-            {cartItems.map((item) => (
+          ) : (
+            cartItems.map((item) => (
               <div
                 key={item.id}
-                className="flex justify-between items-center py-4"
+                className="flex justify-between items-center border rounded-md p-3"
               >
-                {/* image */}
-                <div className="flex items-center gap-4 w-[50%]">
+                {/* Product info */}
+                <div className="flex items-center gap-3 w-[55%]">
                   <img
                     src={item.image[0]}
                     alt={item.title}
-                    className="w-15 h-12 object-contain"
+                    className="w-12 h-12 object-contain"
                   />
+
                   <div>
-                    <h3 className="text-gray-800 font-medium text-[12px]">
+                    <p className="text-xs font-medium line-clamp-1">
                       {item.title}
-                    </h3>
-                    <p className="text-gray-600 text-[12px] font-semibold">
+                    </p>
+
+                    {item.size && (
+                      <p className="text-[11px] text-gray-500">
+                        Size:{" "}
+                        <span className="font-semibold">{item.size}</span>
+                      </p>
+                    )}
+
+                    <p className="text-xs font-semibold">
                       ₹{item.price.toFixed(2)}
                     </p>
                   </div>
                 </div>
 
-                {/* Quantity Buttons */}
-                <div className="flex items-center gap-1 border rounded-lg px-2 py-1">
+                {/* qty button*/}
+                <div className="flex items-center gap-1 border rounded-md px-2 py-1 text-xs">
                   <button
                     onClick={() => removeFromCart(item)}
-                    className="text-md px-2 hover:text-red-600"
+                    className="px-1 hover:text-red-600"
                   >
-                    -
+                    −
                   </button>
 
-                  <span className="w-3 text-center">{item.quantity}</span>
+                  <span className="w-4 text-center">{item.quantity}</span>
 
                   <button
-                  disabled={item.quantity >= 10}
-                    onClick={() => addToCart({ ...item, quantity: 1 })}
-                     className={`text-md px-2 ${item.quantity >= 10 ? "opacity-40 ": "hover:text-green-600"}`}>
-                  
+                    disabled={item.quantity >= 4}
+                    onClick={() => addToCart(item)}
+                    className={`px-1 ${
+                      item.quantity >= 4
+                        ? "opacity-40"
+                        : "hover:text-green-600"
+                    }`}
+                  >
                     +
                   </button>
                 </div>
 
-                {/* Delete */}
+                {/* Del button */}
                 <button
                   onClick={() => deleteFromCart(item)}
                   className="text-gray-400 hover:text-black"
                 >
-                  <FaTrashAlt size={14} />
+                  <FaTrashAlt size={12} />
                 </button>
               </div>
-            ))}
-          </div>
+            ))
+          )}
         </div>
 
-        {/* summary */}
-        <div className="w-[300px] border-l bg-white flex flex-col h-full flex-none">
-          <div className="flex-1 px-6 py-8 space-y-6">
-            <h3 className="text-xl font-semibold">Order Summary</h3>
+        {/* right side*/}
+        <div className="border rounded-lg p-4 space-y-3 h-fit bg-white sticky top-4">
+          {/* order summary */}
+          <h2 className="text-sm font-semibold">Order Summary</h2>
 
-            <div className="flex justify-between text-gray-700 text-[15px]">
-              <span>Subtotal</span>
-              <span>₹{getCartTotal().toFixed(2)}</span>
-            </div>
-
-            <div className="flex justify-between text-gray-700 text-[15px]">
-              <p>Platform Fee</p>
-              <p> ₹7</p>
-            </div>
-
-            <div className="flex justify-between items-center bg-gray-100 px-4 py-2 rounded-md text-gray-700 text-sm border border-gray-200">
-              <p>Shipping will be calculated at checkout</p>
-            </div>
-
-            <div className="h-[1px] bg-gray-200 w-full"></div>
-
-            <div className="flex justify-between text-[16px] font-bold">
-              <span>Total</span>
-              <span>₹{(getCartTotal() + 7).toFixed(2)}</span>
-            </div>
+          <div className="flex justify-between text-xs">
+            <span>Subtotal</span>
+            <span>₹{getCartTotal().toFixed(2)}</span>
           </div>
 
-          {/* Checkout Button */}
-          <div className="px-6 py-5 border-t bg-white">
-            <button
-              className="w-full h-[48px] rounded-md bg-black text-white font-semibold tracking-wide hover:bg-gray-900"
-              onClick={() => setStep(2)}
-            >
-              PROCEED TO CHECKOUT →
-            </button>
+          <div className="flex justify-between text-xs">
+            <span>Platform Fee</span>
+            <span>₹{platformFee}</span>
           </div>
+
+          <div className="flex justify-between text-xs text-gray-500">
+            <span>Shipping</span>
+            <span>Calculated at checkout</span>
+          </div>
+
+          <hr />
+
+          <div className="flex justify-between text-sm font-bold">
+            <span>Total</span>
+            <span>₹{(getCartTotal() + platformFee).toFixed(2)}</span>
+          </div>
+
+          <button
+            onClick={() => setStep(2)}
+            className="w-full bg-black text-white py-2 rounded-md text-sm font-semibold hover:bg-gray-900"
+          >
+            Continue to Checkout
+          </button>
         </div>
       </div>
     </>

@@ -1,32 +1,25 @@
-import React from 'react'
-import { useCart } from "../../Context/CartContext";
+import React from "react";
 
-export const QuantityButton = ({item}) => {
-    const { addToCart, removeFromCart } = useCart();
+export const QuantityButton = ({ value, setValue, max = 4 }) => {
   return (
-  <>
-   <div className="flex items-center justify-center gap-2 w-full border  border-black bg-black text-white  py-2  rounded-lg  font-medium transition-all duration-300">
-        <button
-          onClick={() => removeFromCart(item)}
-          className="text-lg font-bold px-2 hover:text-red-600"
-        >
-          -
-        </button>
+    <div className="flex items-center justify-between w-[120px] h-[48px] border rounded-md">
+      <button
+        onClick={() => value > 1 && setValue(value - 1)}
+        disabled={value <= 1}
+        className="w-10 h-full text-lg disabled:opacity-40"
+      >
+        −
+      </button>
 
-        <span className="w-6 text-center font-semibold">
-          {item.quantity}
-        </span>
+      <span className="text-sm font-semibold">{value}</span>
 
-        <button
-        disabled={item.quantity >= 10}
-          onClick={() => addToCart({ ...item, quantity: 1 })}
-           className={`text-lg font-bold px-2 ${item.quantity >= 10 ? "opacity-40 ": "hover:text-green-600"}`}
-        >
-        
-          +
-        </button>
-      </div>
-  
-  </>
-  )
-}
+      <button
+        onClick={() => value < max && setValue(value + 1)}
+        disabled={value >= max}
+        className="w-10 h-full text-lg disabled:opacity-40"
+      >
+        +
+      </button>
+    </div>
+  );
+};

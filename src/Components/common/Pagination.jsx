@@ -16,8 +16,7 @@ const getPages = (current, total) => {
   return pages;
 };
 
-
-export const Pagination = ({page, pageHandler, dynamicPage}) => {
+export const Pagination = ({ page, pageHandler, dynamicPage }) => {
   return (
     <div className="mt-10 space-x-4 ">
       {/* prev btn */}
@@ -26,7 +25,10 @@ export const Pagination = ({page, pageHandler, dynamicPage}) => {
         className={`${
           page === 1 ? "bg-gray-700" : "bg-gray-900"
         } text-white px-3 py-1 rounded-md cursor-pointer`}
-      onClick={()=>{pageHandler(page-1); window.scrollTo({ top: 0, behavior: "smooth" })}}
+        onClick={() => {
+          pageHandler(page - 1);
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        }}
       >
         Prev
       </button>
@@ -38,9 +40,11 @@ export const Pagination = ({page, pageHandler, dynamicPage}) => {
             key={index}
             onClick={() => {
               typeof item === "number" && pageHandler(item);
-              window.scrollTo({ top: 0, behavior: "smooth" })
+              window.scrollTo({ top: 0, behavior: "smooth" });
             }}
-            className={`cursor-pointer ${item === page ? "font-bold text-black" : "text-black"}`}
+            className={`cursor-pointer ${
+              item === page ? "font-bold text-black" : "text-black"
+            }`}
           >
             {item}
           </span>
@@ -54,13 +58,12 @@ export const Pagination = ({page, pageHandler, dynamicPage}) => {
           page === dynamicPage ? "bg-gray-700" : "bg-gray-900"
         } text-white px-3 py-1 rounded-md cursor-pointer`}
         onClick={() => {
-  pageHandler(page + 1);
-  window.scrollTo({ top: 0, behavior: "smooth" });
-}}
+          pageHandler(page + 1);
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        }}
       >
         Next
       </button>
-      
     </div>
   );
 };

@@ -14,12 +14,14 @@ import { RiArrowDropDownFill } from "react-icons/ri";
 import { MenuItems } from "./MenuItems";
 import { LocationDetect } from "./LocationDetect";
 
+
 export const Navbar = ({ search, onSearchChange, user, setUser }) => {
   const { cartItems, cartQuantity } = useCart();
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [showPopUp, setShowPopUp] = useState(false);
+  
 
   const navigate = useNavigate();
 
@@ -83,9 +85,9 @@ export const Navbar = ({ search, onSearchChange, user, setUser }) => {
 
             {/* cart quantity */}
             <button
-              onClick={() => setIsCartOpen(true)}
-              className="relative group"
-            >
+              onClick={() =>   
+                setIsCartOpen(true)}
+              className="relative group"  >
               <CiShoppingCart className="h-7 w-7 text-gray-700 transition-colors duration-300" />
               <span className="absolute -top-2 -right-2 text-white text-xs rounded-full bg- font-bold bg-black px-1.5 py-0.5 shadow-md">
                 {cartQuantity()}
@@ -126,7 +128,7 @@ export const Navbar = ({ search, onSearchChange, user, setUser }) => {
                     <MenuItems
                       user={user}
                       setShowPopUp={setShowPopUp}
-                      onItemClick={() => setIsDropdownOpen(false)}
+                      onItemClick={() => setIsDropdownOpen(true)}
                     />
                   </div>
                 )}
@@ -223,7 +225,7 @@ export const Navbar = ({ search, onSearchChange, user, setUser }) => {
         </div>
       )}
 
-      {isCartOpen ? <MiniCart onClose={() => setIsCartOpen(false)} /> : ""}
+      {isCartOpen ? <MiniCart onClose={() => setIsCartOpen(false)  } /> : ""}
     </>
   );
 };

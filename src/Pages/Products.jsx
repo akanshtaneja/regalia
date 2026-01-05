@@ -52,7 +52,7 @@ export const Products = ({ search, setSearch }) => {
   };
 
   // dynamic page
-  const dynamicPage = Math.ceil(filteredData?.length / 8);
+  const dynamicPage = Math.ceil(filteredData?.length / 16);
 
 // sorting validation
   const handleSort = (value) => {
@@ -97,6 +97,7 @@ export const Products = ({ search, setSearch }) => {
             <FiFilter className="text-lg" />
             Filters
           </button>
+          
           <FilterSection
             isOpen={isFilterOpen}
             onClose={() => setIsFilterOpen(false)}
@@ -120,7 +121,7 @@ export const Products = ({ search, setSearch }) => {
                 <div className="flex flex-col justify-center items-center w-full">
                   <div className="grid grid-cols-2 md:grid-cols-4 gap-5 mt-10">
                     {(sortedData.length > 0 ? sortedData : filteredData)
-                      ?.slice(page * 8 - 8, page * 8)
+                      ?.slice(page * 16 - 16, page * 16)
                       .map((product, index) => (
                         <ProductCard key={index} product={product} />
                       ))}

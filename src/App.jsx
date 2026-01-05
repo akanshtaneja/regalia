@@ -12,7 +12,6 @@ import { ToastContainer, Bounce } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { About } from "./Pages/About.jsx";
 import { Contact } from "./Pages/Contact.jsx";
-import { SingleProduct } from "./Pages/SingleProduct.jsx";
 import { Navbar } from "./Components/common/Navbar.jsx";
 import { Return } from "./Pages/Return.jsx";
 import { Payment } from "./Pages/MiniCart/Payment.jsx";
@@ -25,6 +24,7 @@ import { SignUp } from "./Pages/SignUp.jsx";
 import { Protected } from "./Routes/Protected.jsx";
 import { Wishlist } from "./Pages/Wishlist.jsx";
 import { WishlistProvider } from "./Context/WishlistContext.jsx";
+import { DetailPage } from "./Pages/DetailPage.jsx";
 
 
 function App() {
@@ -63,7 +63,7 @@ function App() {
             <Route path="/login" element={<Login setUser={setUser}/>} />
             <Route path="/signup" element={<SignUp />} />
             <Route path="/products" element={<Products search={search} setSearch={setSearch}/>} />
-            <Route path="/products/:id" element={<SingleProduct />} />
+            <Route path="/products/:id" element={<DetailPage />} />
             <Route path="/faq" element={<Faq />} />
             <Route path="/about" element={<About />} />
 
@@ -97,3 +97,5 @@ function App() {
 }
 
 export default App;
+
+
