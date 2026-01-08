@@ -46,8 +46,6 @@ export const DetailPage = () => {
     fetchProduct();
   }, [id]);
 
-  
-
   useEffect(() => {
     if (singleProduct?.id) {
       SaveRecentlyViewed(singleProduct);
@@ -77,7 +75,6 @@ export const DetailPage = () => {
     }
   }, [cartItems, singleProduct, selectedSize]);
 
-  
 
   useEffect(() => {
   if (!alreadyAdded || !selectedSize) return;
@@ -109,7 +106,6 @@ export const DetailPage = () => {
     });
     setIsCartOpen(true);
   };
-
 
 
 
@@ -165,6 +161,7 @@ export const DetailPage = () => {
               </span>
             </div>
 
+            
             {/* size */}
             <div className="flex flex-col gap-1 max-w-[240px]">
               <button
@@ -183,6 +180,8 @@ export const DetailPage = () => {
                 <p className="text-sm text-red-500">Please select your size</p>
               )}
             </div>
+
+
 
             <FindSize
               isOpen={isSizeOpen}
@@ -236,3 +235,4 @@ export const DetailPage = () => {
     </>
   );
 };
+  

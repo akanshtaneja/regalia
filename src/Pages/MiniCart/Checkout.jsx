@@ -193,7 +193,7 @@ export const Checkout = ({
               <h2 className="text-sm font-semibold">Order Summary</h2>
 
               {/* product info */}
-              <div className="space-y-3 max-h-[220px] overflow-y-auto pr-1">
+              <div className="space-y-3 max-h-[180px] overflow-y-auto pr-1 scrollbar-hide">
                 {cartItems.map((item) => (
                   <div key={item.id} className="flex gap-3 text-xs">
                     <img

@@ -6,6 +6,7 @@ import { SuccessPopup } from "./SuccessPopup";
 import { Cart } from "./Cart";
 import { EmptyCart } from "./EmptyCart";
 
+
 export const MiniCart = ({ onClose}) => {
   const {
     cartItems,
@@ -74,6 +75,7 @@ export const MiniCart = ({ onClose}) => {
             onClose={onClose}
           />
         )}
+
       </div>
     </div>
   );
