@@ -11,7 +11,9 @@ export const DataProvider = ({ children }) => {
     try {
       // const res = await axios.get('https://api.escuelajs.co/api/v1/products')
       // const res = await axios.get("https://fakestoreapi.com/products");
-      const res = await axios.get("http://localhost:3001/data");
+      // const res = await axios.get("http://localhost:3001/data");
+      const res = await axios.get("/db.json");
+
       console.log(res);
       const productsData = res.data;
       setData(productsData);
