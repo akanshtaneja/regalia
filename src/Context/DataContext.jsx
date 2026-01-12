@@ -15,7 +15,7 @@ export const DataProvider = ({ children }) => {
       const res = await axios.get("/db.json");
 
       console.log(res);
-      const productsData = res.data;
+      const productsData = res.data.data;
       setData(productsData);
     } catch (error) {
       console.log(error);
