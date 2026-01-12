@@ -27,7 +27,7 @@ const [selectedImg, setSelectedImage] = useState("")
 
   const getSingleProduct = async () => {
     try {
-      const res = await axios.get(`http://localhost:3001/data/${params.id}`);
+      const res = await axios.get(`https://capstone-akansh-json-server.onrender.com/api/data/${params.id}`);
       setSingleProduct(res.data);
     } catch (error) {
       console.log(error);

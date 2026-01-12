@@ -12,7 +12,8 @@ export const DataProvider = ({ children }) => {
       // const res = await axios.get('https://api.escuelajs.co/api/v1/products')
       // const res = await axios.get("https://fakestoreapi.com/products");
       // const res = await axios.get("http://localhost:3001/data");
-      const res = await axios.get("/db.json");
+      const res = await axios.get("https://capstone-akansh-json-server.onrender.com/api/data");
+      
 
       console.log(res);
       const productsData = res.data;
