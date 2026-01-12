@@ -18,8 +18,6 @@ import { FindSize } from "../Components/common/FindSize";
 import { QuantityButton } from "../Components/Button/QuantityButton";
 import { MiniCart } from "./MiniCart/miniCart";
 
-
-
 export const DetailPage = () => {
   const { cartItems, addToCart, updateCartQuantity } = useCart();
   const { wishlistItems, toggleWishlist } = useWishlist();
@@ -36,11 +34,10 @@ export const DetailPage = () => {
   const [alreadyAdded, setAlreadyAdded] = useState(false);
   const maxQty = 4;
 
-
   // fetch single product
   useEffect(() => {
     const fetchProduct = async () => {
-      const res = await axios.get(`https://capstone-akansh-json-server.onrender.com/api/data/${Number(params.id)}`)
+      const res = await axios.get( `https://capstone-akansh-json-server.onrender.com/api/data/${Number(id)}`);
       setSingleProduct(res.data);
     };
     fetchProduct();
@@ -61,35 +58,34 @@ export const DetailPage = () => {
     setSizeError(false);
   }, [id]);
 
-  
   useEffect(() => {
     if (!singleProduct || !selectedSize) return;
 
-    const cartItem = cartItems.find((item) => item.id === singleProduct.id && item.size === selectedSize );
+    const cartItem = cartItems.find(
+      (item) => item.id === singleProduct.id && item.size === selectedSize
+    );
 
     if (cartItem) {
-      setSelectedQty(cartItem.quantity); 
+      setSelectedQty(cartItem.quantity);
       setAlreadyAdded(true);
     } else {
       setAlreadyAdded(false);
     }
   }, [cartItems, singleProduct, selectedSize]);
 
-
   useEffect(() => {
-  if (!alreadyAdded || !selectedSize) return;
+    if (!alreadyAdded || !selectedSize) return;
 
-  updateCartQuantity(
-    {
-      id: singleProduct.id,
-      size: selectedSize,
-    },
-    selectedQty
-  );
-}, [selectedQty]);
+    updateCartQuantity(
+      {
+        id: singleProduct.id,
+        size: selectedSize,
+      },
+      selectedQty
+    );
+  }, [selectedQty]);
 
-
-  // handle add to cart 
+  // handle add to cart
   const handleAddToCart = () => {
     if (!selectedSize) {
       setSizeError(true);
@@ -107,8 +103,6 @@ export const DetailPage = () => {
     setIsCartOpen(true);
   };
 
-
-
   // loading
   if (!singleProduct) {
     return (
@@ -120,11 +114,13 @@ export const DetailPage = () => {
     );
   }
 
+  const originalPrice = Math.round(
+    singleProduct.price + singleProduct.price * (singleProduct.discount / 100)
+  );
 
-  const originalPrice = Math.round( singleProduct.price + singleProduct.price * (singleProduct.discount / 100));
-
-  const isItemInWishlist = wishlistItems.find((item) => item.id === singleProduct.id);
-
+  const isItemInWishlist = wishlistItems.find(
+    (item) => item.id === singleProduct.id
+  );
 
   return (
     <>
@@ -132,7 +128,6 @@ export const DetailPage = () => {
         <Breadcrumb title={singleProduct.title} />
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mt-10">
-
           {/* left image */}
           <DetailPageImage
             singleProduct={singleProduct}
@@ -161,7 +156,6 @@ export const DetailPage = () => {
               </span>
             </div>
 
-            
             {/* size */}
             <div className="flex flex-col gap-1 max-w-[240px]">
               <button
@@ -180,8 +174,6 @@ export const DetailPage = () => {
                 <p className="text-sm text-red-500">Please select your size</p>
               )}
             </div>
-
-
 
             <FindSize
               isOpen={isSizeOpen}
@@ -207,20 +199,19 @@ export const DetailPage = () => {
               <div className="flex flex-col gap-1">
                 {alreadyAdded ? (
                   <AddToCart
-                  label="Go to Cart"
+                    label="Go to Cart"
                     onClick={() => setIsCartOpen(true)}
                   />
                 ) : (
                   <AddToCart onClick={handleAddToCart} />
                 )}
 
-                {/* already added */}   
-                  {alreadyAdded && (
-                    <p className="text-sm text-green-600">
-                      ✓ Item is already in your cart
-                    </p>
-                  )}
-               
+                {/* already added */}
+                {alreadyAdded && (
+                  <p className="text-sm text-green-600">
+                    ✓ Item is already in your cart
+                  </p>
+                )}
               </div>
             </div>
           </div>
@@ -235,4 +226,3 @@ export const DetailPage = () => {
     </>
   );
 };
-  
