@@ -62,7 +62,7 @@ export const SignUp = () => {
     if (Object.keys(errors).length) return;
 
     axios
-      .post("http://localhost:3002/signup", formValues)
+      .post("https://capstone-akansh.onrender.com/signup", formValues)
       .then((res) => {
         setApiMessage(res.data.message);
         if (res.data.message === "Signup Successful") {

@@ -42,7 +42,7 @@ export const Login = ({setUser}) => {
     if (Object.keys(errors).length) return;
 
     axios
-      .post("http://localhost:3002/validatePassword", {
+      .post("https://capstone-akansh.onrender.com/validatePassword", {
         email: formValues.email,
         password: formValues.password,
       })
