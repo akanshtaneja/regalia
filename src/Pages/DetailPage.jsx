@@ -40,7 +40,7 @@ export const DetailPage = () => {
   // fetch single product
   useEffect(() => {
     const fetchProduct = async () => {
-      const res = await axios.get(`http://localhost:3001/data/${id}`);
+      const res = await axios.get(`https://capstone-akansh-json-server.onrender.com/api/data/${Number(params.id)}`)
       setSingleProduct(res.data);
     };
     fetchProduct();
