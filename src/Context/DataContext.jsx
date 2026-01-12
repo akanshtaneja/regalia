@@ -15,7 +15,7 @@ export const DataProvider = ({ children }) => {
       const res = await axios.get("/db.json");
 
       console.log(res);
-      const productsData = res.data.data;
+      const productsData = res.data;
       setData(productsData);
     } catch (error) {
       console.log(error);
@@ -27,7 +27,7 @@ export const DataProvider = ({ children }) => {
 }, []);
 
 
- const getUniqueCategory = (data, property) => {
+ const getUniqueCategory = (data=[], property) => {
   let newVal = data?.flatMap((item) => {
     const value = item[property];
     return Array.isArray(value) ? value : [value];
