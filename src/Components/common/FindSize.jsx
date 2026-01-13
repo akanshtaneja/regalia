@@ -37,19 +37,20 @@ export const FindSize = ({
 
           {/* drawer */}
           <motion.div
-            className="fixed top-0 right-0 h-full w-[400px] bg-white z-50 px-6 py-5 flex flex-col overflow-y-auto scrollbar-hide"
+            className="fixed top-0 right-0 h-full sm:w-[400px] bg-white z-50 px-6 py-5 flex flex-col overflow-y-auto scrollbar-hide "
             initial={{ x: "100%" }}
             animate={{ x: 0 }}
             exit={{ x: "100%" }}
             transition={{ type: "spring", stiffness: 180, damping: 22 }}
           >
             {/* header */}
-            <div className="flex items-center justify-between pb-4 mb-4 mt-2 md:pl-0 pl-5">
-              <h2 className="md:text-xl font-bold tracking-wide uppercase text:lg">
+            <div className="flex flex-wrap items-center justify-between gap-2 pb-4 mb-4 mt-2">
+              <h2 className="text-lg md:text-xl font-bold tracking-wide uppercase">
                 Choose a Size
               </h2>
-              <button onClick={onClose}>
-                <IoClose className="md:text-2xl hover:text-black text-xl"/>
+
+              <button onClick={onClose} className="ml-auto">
+                <IoClose className="text-xl md:text-2xl hover:text-black" />
               </button>
             </div>
 
@@ -60,7 +61,12 @@ export const FindSize = ({
                   key={index}
                   onClick={() => setLocalSize(item)}
                   className={` w-full md:h-14 h-12 text-sm font-semibold tracking-wide uppercase flex items-center px-5 transition hover:border-black
-                    ${ localSize === item ? " border border-black" : "border border-gray-300"}`}>
+                    ${
+                      localSize === item
+                        ? " border border-black"
+                        : "border border-gray-300"
+                    }`}
+                >
                   {item}
                 </button>
               ))}
@@ -73,7 +79,7 @@ export const FindSize = ({
                 >
                   confirm your selection
                 </button>
-              )} 
+              )}
             </div>
           </motion.div>
         </>
