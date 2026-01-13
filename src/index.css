@@ -1,5 +1,6 @@
 body {
   @apply font-nunito;
+  overflow-x: hidden;
 }
 
 .scrollbar-hide {

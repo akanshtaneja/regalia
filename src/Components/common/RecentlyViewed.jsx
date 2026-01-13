@@ -18,7 +18,7 @@ export const RecentlyViewed = () => {
           {/* heading */}
 
           <div className="flex items-center justify-center gap-3 mb-6">
-            <h1 className="text-2xl md:text-2xl font-bold text-gray-900 uppercase tracking-wide">
+            <h1 className="text-xl md:text-2xl font-bold text-gray-900 uppercase md:tracking-wide">
               Resume Your Selection
             </h1>
             <Link to="/products">

@@ -23,7 +23,7 @@ export const Carousel = () => {
     <div className="w-full overflow-hidden">
       <Slider {...settings}>
         {db.carousel.map((item) => (
-          <div key={item.id} className="relative w-full md:h-[450px] h-[350px] ">
+          <div key={item.id} className="relative w-full md:h-[450px] h-[300px] ">
             <div className="absolute inset-0 bg-gradient-to-r from-black via-black/70 to-transparent"></div>
 
             <div className="absolute right-0 top-0 h-full w-[50%] flex items-center justify-end z-10">
@@ -32,7 +32,7 @@ export const Carousel = () => {
                 alt={item.title}
                 loading="eager"
                 fetchPriority="high"
-                className="md:h-[450px] w-auto h-[350px]"
+                className="md:h-[450px] w-auto h-[300px]"
               />
             </div>
 

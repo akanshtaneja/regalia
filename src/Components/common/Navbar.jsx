@@ -79,7 +79,7 @@ export const Navbar = ({ search, onSearchChange, user, setUser }) => {
                 value={search}
                 onChange={(e) => onSearchChange(e.target.value)}
                 onKeyDown={handleKeyDown}
-                className="border border-gray-300 rounded-full pl-10 pr-3 py-1.5 w-[180px] outline-none transition-all  text-gray-400 text-sm "
+                className="border border-gray-300 rounded-full pl-10 pr-3 py-1.5 w-[120px] outline-none transition-all  text-gray-400 text-sm "
               />
             </div>
 

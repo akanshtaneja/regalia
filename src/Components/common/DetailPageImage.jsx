@@ -14,7 +14,7 @@ export const DetailPageImage = ({singleProduct, selectedImg, setSelectedImage, t
             key={index}
             src={img}
             onClick={() => setSelectedImage(img)}
-            className={`w-[60px] h-[60px] p-1 rounded-md cursor-pointer transition
+            className={`md:w-[60px] md:h-[60px] p-1 rounded-md cursor-pointer transition w-[70px] h-[50px]
             ${selectedImg === img ? "border border-black" : "border border-gray-300"}`}
           />
         ))}
