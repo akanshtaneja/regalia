@@ -20,26 +20,21 @@ export const CartProvider = ({ children }) => {
   };
 
   // ----ADD ----
-  const addToCart = (item) => {
+  const addToCart = (item, qty = 1) => {
   const userId = JSON.parse(localStorage.getItem("LoginId"));
-  const incomingQty = item.quantity ?? 1;
 
   const isItemInCart = cartItems.find(
-    (cartItem) =>
-      cartItem.id === item.id && cartItem.size === item.size
+    (cartItem) => cartItem.id === item.id && cartItem.size === item.size
   );
 
   let updatedCart;
 
   if (isItemInCart) {
     updatedCart = cartItems.map((cartItem) => {
-      if (
-        cartItem.id === item.id &&
-        cartItem.size === item.size
-      ) {
+      if (cartItem.id === item.id && cartItem.size === item.size) {
         return {
           ...cartItem,
-          quantity: cartItem.quantity + incomingQty, 
+          quantity: cartItem.quantity + qty,   
         };
       }
       return cartItem;
@@ -47,17 +42,16 @@ export const CartProvider = ({ children }) => {
   } else {
     updatedCart = [
       ...cartItems,
-      { ...item, quantity: incomingQty }, 
+      { ...item, quantity: qty },   
     ];
   }
 
   setCartItems(updatedCart);
-  localStorage.setItem(
-    `Cart_${userId}`,
-    JSON.stringify(updatedCart)
-  );
+  localStorage.setItem(`Cart_${userId}`, JSON.stringify(updatedCart));
 };
 
+
+// update cart quantity 
 const updateCartQuantity = (item, quantity) => {
   const userId = JSON.parse(localStorage.getItem("LoginId"));
 

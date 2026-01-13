@@ -83,7 +83,7 @@ export const Cart = ({
 
                   <button
                     disabled={item.quantity >= 4}
-                    onClick={() => addToCart(item)}
+                    onClick={() => addToCart(item, 1)}
                     className={`px-1 ${
                       item.quantity >= 4
                         ? "opacity-40"

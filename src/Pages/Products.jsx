@@ -12,7 +12,8 @@ import { FiFilter } from "react-icons/fi";
 import { useLocation, useNavigate } from "react-router-dom";
 import { Navigate } from "react-router-dom";
 import { Sorting } from "../Components/common/Sorting";
-
+import {ProductCardShimmer} from "../Components/Shimmer/ProductCardShimmer"
+ 
 export const Products = ({ search, setSearch }) => {
   const { data, fetchAllProducts } = useContext(DataContext);
   const [category, setCategory] = useState("All");
@@ -143,12 +144,8 @@ export const Products = ({ search, setSearch }) => {
             </div>
           </>
         ) : (
-          // Loasing
-          <div className="flex items-center justify-center h-[400px]">
-            <video muted autoPlay loop>
-              <source src={Loading} type="video/webm" />
-            </video>
-          </div>
+          // loading
+          <ProductCardShimmer />
         )}
       </div>
 

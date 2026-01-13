@@ -5,6 +5,7 @@ import Loading from "../../assets/Animations/loading.webm";
 import { Link } from "react-router-dom";
 import { getData } from "../../Context/DataContext";
 import { useNavigate } from "react-router-dom";
+import { ProductCardShimmer } from "../Shimmer/ProductCardShimmer";
 
 export const BestSelling = () => {
   const { data} = useContext(DataContext);
@@ -52,17 +53,14 @@ export const BestSelling = () => {
 
             <Link
               to="/products"
-              className="bg-black  text-white px-8 py-2 rounded-lg text-lg font-semibold shadow-md  transition-all duration-300 mt-10 inline-block hover:bg-gray-900 "
+              className="bg-black  text-white px-8 py-2 rounded-md text-lg font-semibold shadow-md  transition-all duration-300 mt-10 inline-block hover:bg-gray-900 "
             >
               Explore Collection
             </Link>
           </div>
         ) : (
-          <div className="flex items-center justify-center h-[300px]">
-            <video muted autoPlay loop>
-              <source src={Loading} type="video/webm" />
-            </video>
-          </div>
+          // loading
+          <ProductCardShimmer />
         )}
       </div>
     </div>

@@ -17,6 +17,7 @@ import { MdArrowForwardIos } from "react-icons/md";
 import { FindSize } from "../Components/common/FindSize";
 import { QuantityButton } from "../Components/Button/QuantityButton";
 import { MiniCart } from "./MiniCart/miniCart";
+import { DetailPageShimmer } from "../Components/Shimmer/DetailPageShimmer";
 
 export const DetailPage = () => {
   const { cartItems, addToCart, updateCartQuantity } = useCart();
@@ -95,22 +96,22 @@ export const DetailPage = () => {
 
     setSizeError(false);
 
-    addToCart({
-      ...singleProduct,
-      size: selectedSize,
-      quantity: Math.min(selectedQty, maxQty),
-    });
+    addToCart(
+  {
+    ...singleProduct,
+    size: selectedSize,
+  },
+  Math.min(selectedQty, maxQty)
+);
+
     setIsCartOpen(true);
   };
 
   // loading
   if (!singleProduct) {
     return (
-      <div className="flex items-center justify-center h-screen">
-        <video muted autoPlay loop>
-          <source src={Loading} type="video/webm" />
-        </video>
-      </div>
+      // 
+      <DetailPageShimmer />
     );
   }
 
