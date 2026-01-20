@@ -1,30 +1,30 @@
 import { useState, useCallback, useEffect } from "react";
-import "./App.css";
-import "./index.css";
-import { Login } from "./Pages/Login.jsx";
-import { Home } from "./Pages/Home.jsx";
 import { Routes, Route } from "react-router-dom";
-import { Products } from "./Pages/Products.jsx";
-import { DataProvider } from "./Context/DataContext.jsx";
-import { CartProvider } from "./Context/CartContext.jsx";
-import { BestSelling } from "./Components/common/BestSelling.jsx";
+import { lazy, Suspense } from "react";
 import { ToastContainer, Bounce } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { About } from "./Pages/About.jsx";
-import { Contact } from "./Pages/Contact.jsx";
+import "./App.css";
+import "./index.css";
 import { Navbar } from "./Components/common/Navbar.jsx";
-import { Return } from "./Pages/Return.jsx";
-import { Payment } from "./Pages/MiniCart/Payment.jsx";
-import {Faq} from "./Pages/Faq.jsx"
 import {ScrollToTop} from './Components/common/ScrollToTop.jsx'
+import { DataProvider } from "./Context/DataContext.jsx";
+import { CartProvider } from "./Context/CartContext.jsx";
 import  {LocationProvider} from './Context/LocationContext.jsx'
 import { debounce } from "./utils/debounce.jsx";
-import { Order } from "./Pages/Order.jsx";
-import { SignUp } from "./Pages/SignUp.jsx";
 import { Protected } from "./Routes/Protected.jsx";
-import { Wishlist } from "./Pages/Wishlist.jsx";
 import { WishlistProvider } from "./Context/WishlistContext.jsx";
-import { DetailPage } from "./Pages/DetailPage.jsx";
+import {Home} from "./Pages/Home.jsx"
+const Login = lazy(() => import("./Pages/Login.jsx"));
+const Products = lazy(() => import("./Pages/Products.jsx"));
+const About = lazy(() => import("./Pages/About.jsx"));
+const Contact = lazy(() => import("./Pages/Contact.jsx"));
+const Payment = lazy(() => import("./Pages/MiniCart/Payment.jsx"));
+const Return = lazy(() => import("./Pages/Return.jsx"));
+const Faq = lazy(() => import("./Pages/Faq.jsx"));
+const Order = lazy(() => import("./Pages/Order.jsx"));
+const SignUp = lazy(() => import("./Pages/SignUp.jsx"));
+const Wishlist = lazy(() => import("./Pages/Wishlist.jsx"));
+const DetailPage = lazy(() => import("./Pages/DetailPage.jsx"));
 
 
 function App() {
@@ -58,6 +58,7 @@ function App() {
           <WishlistProvider>
           <Navbar  search={localSearch} onSearchChange={handleGlobalSearch} user={user} setUser={setUser}/>
           <ScrollToTop />
+          <Suspense fallback={<div className="text-center mt-10">Loading...</div>}>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/login" element={<Login setUser={setUser}/>} />
@@ -76,6 +77,7 @@ function App() {
            </Route>
             
           </Routes>
+          </Suspense>
  </WishlistProvider>
         </CartProvider>
       </DataProvider>

@@ -3,7 +3,7 @@ import { MdLocationOn, MdEmail, MdPhone } from "react-icons/md";
 import { Navbar } from "../Components/common/Navbar";
 import { Footer } from "../Components/common/Footer"
 
-export const Contact = () => {
+const Contact = () => {
   return (
     <>
     
@@ -112,3 +112,5 @@ export const Contact = () => {
     </>
   );
 };
+
+export default Contact

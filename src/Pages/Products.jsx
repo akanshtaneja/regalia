@@ -14,7 +14,7 @@ import { Navigate } from "react-router-dom";
 import { Sorting } from "../Components/common/Sorting";
 import {ProductCardShimmer} from "../Components/Shimmer/ProductCardShimmer"
  
-export const Products = ({ search, setSearch }) => {
+const Products = ({ search, setSearch }) => {
   const { data, fetchAllProducts } = useContext(DataContext);
   const [category, setCategory] = useState("All");
   const [priceRange, setPriceRange] = useState([0, 50000]);
@@ -153,3 +153,7 @@ export const Products = ({ search, setSearch }) => {
     </div>
   );
 };
+
+
+
+export default Products

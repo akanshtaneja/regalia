@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { Footer } from "../Components/common/Footer";
 import { CiShoppingCart } from "react-icons/ci";
 
-export const Order = () => {
+const Order = () => {
   const [savedOrders, setSavedOrders] = useState([]);
 
   // login id
@@ -95,6 +95,7 @@ export const Order = () => {
                     <img
                       src={order.product.image[0]}
                       alt={order.product.title}
+                      loading="lazy"
                       className="w-20 h-20 object-contain"
                     />
                     <div>
@@ -142,3 +143,5 @@ export const Order = () => {
     </>
   );
 };
+
+export default Order

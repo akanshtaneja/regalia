@@ -16,6 +16,7 @@ export const EmptyCart = ({onClose}) => {
         <img
           src="https://cdn.dribbble.com/userupload/8913721/file/original-27f29cc8cf3843454340ffa980be35f5.gif"
           className="w-40 mb-4"
+          loading="lazy"
         />
         <p className="text-lg font-medium">Your cart is empty 🛍️</p>
         <p className="text-sm text-gray-500">Start shopping now!</p>

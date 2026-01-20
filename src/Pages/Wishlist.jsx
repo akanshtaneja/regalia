@@ -6,14 +6,10 @@ import { useCart } from "../Context/CartContext";
 import { CiHeart } from "react-icons/ci";
 import { FaHeart } from "react-icons/fa6";
 
-export const Wishlist = () => {
+const Wishlist = () => {
   const { wishlistItems, removeFromWishlist } = useWishlist();
   const { addToCart } = useCart();
  
-
-
-
-
 
   return (
     <>
@@ -69,6 +65,7 @@ export const Wishlist = () => {
                     <img
                       src={item.image[0]}
                       alt={item.title}
+                      loading="lazy"
                       className="w-20 h-20 object-contain"
                     />
 
@@ -112,3 +109,6 @@ export const Wishlist = () => {
     </>
   );
 };
+
+
+export default Wishlist

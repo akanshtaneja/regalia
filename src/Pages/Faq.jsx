@@ -3,7 +3,7 @@ import data from "../data/FaqData.json";
 import { Accordion } from "../Components/common/Accordion";
 import { Footer } from "../Components/common/Footer";
 
-export const Faq = () => {
+const Faq = () => {
   return (
     <>
     <main className="min-h-screen bg-[#f9fafb] px-4 md:px-8 py-10 flex justify-center">
@@ -24,3 +24,5 @@ export const Faq = () => {
     </>
   );
 };
+
+export default Faq

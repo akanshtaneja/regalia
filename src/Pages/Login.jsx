@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { IoEyeOffOutline, IoEyeOutline } from "react-icons/io5";
 import axios from "axios";
 
-export const Login = ({setUser}) => {
+const Login = ({setUser}) => {
   const [formValues, setFormValues] = useState({ email: "", password: "" });
   const [formErrors, setFormErrors] = useState({});
   const [apiMessage, setApiMessage] = useState("");
@@ -140,3 +140,6 @@ export const Login = ({setUser}) => {
     </div>
   );
 };
+
+
+export default Login

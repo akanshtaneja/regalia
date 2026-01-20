@@ -13,6 +13,7 @@ export const DetailPageImage = ({singleProduct, selectedImg, setSelectedImage, t
           <img
             key={index}
             src={img}
+            loading="lazy"
             onClick={() => setSelectedImage(img)}
             className={`md:w-[60px] md:h-[60px] p-1 rounded-md cursor-pointer transition w-[70px] h-[50px]
             ${selectedImg === img ? "border border-black" : "border border-gray-300"}`}
@@ -38,6 +39,7 @@ export const DetailPageImage = ({singleProduct, selectedImg, setSelectedImage, t
         <img
           src={selectedImg}
           alt={singleProduct.title}
+          loading="lazy"
           className="rounded-xl max-w-[350px] w-full transition-transform duration-300 hover:scale-105"
         />
       </div>

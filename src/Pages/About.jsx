@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { Footer } from "../Components/common/Footer";
 
-export const About = () => {
+const About = () => {
   return (
     <>
       <main className="min-h-screen bg-white pt-14 px-4 sm:px-6 lg:px-20">
@@ -17,6 +17,7 @@ export const About = () => {
           <img
             src="/aboutus/aboutus.png"
             alt="Regalia Store"
+            loading="lazy"
             className="w-full h-[420px]  rounded-2xl shadow-md"
           />
 
@@ -49,6 +50,7 @@ export const About = () => {
           <img
             src="/aboutus/store.png"
             alt="Mission"
+            loading="lazy"
             className="w-full h-[420px] rounded-2xl shadow-md"
           />
         </div>
@@ -58,6 +60,7 @@ export const About = () => {
           <img
             src="/aboutus/ring.png"
             alt="Why Regalia"
+            loading="lazy"
             className="w-full h-[420px]  rounded-2xl shadow-md"
           />
 
@@ -93,6 +96,7 @@ export const About = () => {
           <img
             src="/aboutus/braclet.png"
             alt="Vision"
+            loading="lazy"
             className="w-full h-[420px]  rounded-2xl shadow-md"
           />
         </div>
@@ -120,3 +124,5 @@ export const About = () => {
     </>
   );
 };
+
+export default About

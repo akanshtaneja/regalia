@@ -41,6 +41,7 @@ export const ProductCard = ({ product, showCartBtn = false }) => {
           alt={product.image}
           // width={400}
           // height={300}
+          loading="lazy"
           onClick={() => navigate(`/products/${product.id}`)}
           className="object-contain  p-2 md:p-5 transition-transform duration-500 h-[400px] w-[500px] group-hover:opacity-0 group-hover:scale-105 "
         />
@@ -50,6 +51,7 @@ export const ProductCard = ({ product, showCartBtn = false }) => {
           alt="hover"
           width={400}
           height={300}
+          loading="lazy"
           onClick={() => navigate(`/products/${product.id}`)}
           className="object-contain p-2 md:p-5 absolute top-0 left-0 w-full h-full opacity-0 transition-opacity duration-300 group-hover:opacity-100 group-hover:scale-105"
         />

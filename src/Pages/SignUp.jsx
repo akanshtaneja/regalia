@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { IoEyeOffOutline, IoEyeOutline } from "react-icons/io5";
 import axios from "axios";
 
-export const SignUp = () => {
+const SignUp = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [formValues, setFormValues] = useState({
     name: "",
@@ -195,3 +195,5 @@ export const SignUp = () => {
     </div>
   );
 };
+
+export default SignUp

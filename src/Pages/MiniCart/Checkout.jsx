@@ -29,6 +29,7 @@ export const Checkout = ({
   onClose,
 }) => {
   const {
+
     register,
     handleSubmit,
     watch,
@@ -199,6 +200,7 @@ export const Checkout = ({
                     <img
                       src={item.image[0]}
                       alt={item.title}
+                      loading="lazy"
                       className="w-12 h-12 rounded-md object-cover border"
                     />
 

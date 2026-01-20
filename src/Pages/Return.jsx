@@ -6,7 +6,7 @@ import Lottie from "lottie-react";
 import returnAnimation from "../assets/Animations/return.json";
 import { Link } from "react-router-dom";
 
-export const Return = () => {
+const Return = () => {
   const [reason, setReason] = useState("");
   const [details, setDetails] = useState("");
   const [file, setFile] = useState(null);
@@ -230,3 +230,5 @@ export const Return = () => {
     </>
   );
 };
+
+export default Return

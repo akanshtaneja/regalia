@@ -57,7 +57,7 @@ const updateCartQuantity = (item, quantity) => {
 
   const updatedCart = cartItems.map((cartItem) =>
     cartItem.id === item.id && cartItem.size === item.size
-      ? { ...cartItem, quantity }
+      ? { ...cartItem, quantity }   
       : cartItem
   );
 

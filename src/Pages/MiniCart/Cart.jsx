@@ -49,6 +49,7 @@ export const Cart = ({
                   <img
                     src={item.image[0]}
                     alt={item.title}
+                    loading="lazy"
                     className="w-12 h-12 object-contain"
                   />
 

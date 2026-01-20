@@ -19,7 +19,7 @@ import { QuantityButton } from "../Components/Button/QuantityButton";
 import { MiniCart } from "./MiniCart/miniCart";
 import { DetailPageShimmer } from "../Components/Shimmer/DetailPageShimmer";
 
-export const DetailPage = () => {
+const DetailPage = () => {
   const { cartItems, addToCart, updateCartQuantity } = useCart();
   const { wishlistItems, toggleWishlist } = useWishlist();
   const { id } = useParams();
@@ -227,3 +227,5 @@ export const DetailPage = () => {
     </>
   );
 };
+
+export default DetailPage
