@@ -1,8 +1,8 @@
 import React from 'react'
-import {Carousel} from '../Components/common/Carousel'
-import { BestSelling } from '../Components/common/BestSelling'
-import { Footer } from '../Components/common/Footer'
-import { RecentlyViewed } from '../Components/common/RecentlyViewed'
+const Carousel = React.lazy(() => import("../components/organisms/Carousel"));
+import { BestSelling } from '../components/organisms/BestSelling'
+import { Footer } from '../components/organisms/Footer'
+import { RecentlyViewed } from '../components/organisms/RecentlyViewed'
 
 
 

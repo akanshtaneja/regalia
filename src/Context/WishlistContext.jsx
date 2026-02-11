@@ -29,7 +29,7 @@ useEffect(() => {
             localStorage.setItem(`Wishlist_${userId}`, JSON.stringify(updateWishlist))
         }
         else{
-            console.log("item is already in the wishlist")
+            // console.log("item is already in the wishlist")
         }
     }
 

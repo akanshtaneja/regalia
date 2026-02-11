@@ -1,6 +1,7 @@
-import React from "react";
+import React,{memo} from "react";
 import { Link } from "react-router-dom";
-import { Footer } from "../Components/common/Footer";
+import { Footer } from "../components/organisms/Footer";
+import Button from "../components/atoms/Button"
 
 const About = () => {
   return (
@@ -111,11 +112,12 @@ const About = () => {
             Discover timeless jewellery crafted for elegance and confidence.
           </p>
 
-          <Link to="/products">
-            <button className="bg-black text-white px-8 py-3 rounded-xl hover:bg-gray-800 transition shadow-md">
+         <div className="mt-10">
+            <Button onClick={() => navigate("/products")}>
               Explore Collection
-            </button>
-          </Link>
+            </Button>
+            </div>
+
         </div>
 
       </main>
@@ -125,4 +127,4 @@ const About = () => {
   );
 };
 
-export default About
+export default React.memo(About)

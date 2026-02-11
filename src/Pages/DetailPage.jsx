@@ -1,22 +1,21 @@
-import React, { useEffect, useState, useContext } from "react";
-import { Footer } from "../Components/common/Footer";
+import React, { useEffect, useState, useContext, memo } from "react";
+import { Footer } from "../components/organisms/Footer";
 import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
-import Loading from "../assets/Animations/loading.webm";
-import { Breadcrumb } from "../Components/common/Breadcrumb";
-import { StarRating } from "../Components/common/StarRating";
-import { useCart } from "../Context/CartContext";
-import { AddToCart } from "../Components/Button/AddToCart";
-import { useWishlist } from "../Context/WishlistContext";
-import { SuggestedProduct } from "../Components/common/SuggestedProduct";
-import { DataContext } from "../Context/DataContext";
-import { DetailPageImage } from "../Components/common/DetailPageImage";
+import { Breadcrumb } from "../components/organisms/Breadcrumb";
+import { StarRating } from "../components/organisms/StarRating";
+import { useCart } from "../context/CartContext";
+import { AddToCart } from "../components/atoms/AddToCart";
+import { useWishlist } from "../context/WishlistContext";
+import { SuggestedProduct } from "../components/organisms/SuggestedProduct";
+import { DataContext } from "../context/DataContext";
+import  DetailPageImage  from "../components/organisms/DetailPageImage";
 import { SaveRecentlyViewed } from "../utils/SaveRecentlyViewed";
-import { DetailPageDescription } from "../Components/common/DetailPageDescription";
+import DetailPageDescription  from "../components/organisms/DetailPageDescription";
 import { MdArrowForwardIos } from "react-icons/md";
-import { FindSize } from "../Components/common/FindSize";
-import { QuantityButton } from "../Components/Button/QuantityButton";
-import { MiniCart } from "./MiniCart/miniCart";
+import { FindSize } from "../components/organisms/FindSize";
+import { QuantityButton } from "../components/atoms/QuantityButton";
+import  MiniCart  from "../pages/MiniCart";
 import { DetailPageShimmer } from "../Components/Shimmer/DetailPageShimmer";
 
 const DetailPage = () => {
@@ -51,7 +50,7 @@ const DetailPage = () => {
     }
   }, [singleProduct]);
 
-  // reset product
+// reset product
   useEffect(() => {
     setSelectedSize(null);
     setSelectedQty(1);
@@ -69,7 +68,7 @@ const DetailPage = () => {
     if (cartItem) {
       setSelectedQty(cartItem.quantity);
       setAlreadyAdded(true);
-    } else {
+    } else {                                                             
       setAlreadyAdded(false);
     }
   }, [cartItems, singleProduct, selectedSize]);
@@ -86,7 +85,7 @@ const DetailPage = () => {
     );
   }, [selectedQty]);
 
-  // handle add to cart
+// handle add to cart
   const handleAddToCart = () => {
     if (!selectedSize) {
       setSizeError(true);
@@ -228,4 +227,4 @@ const DetailPage = () => {
   );
 };
 
-export default DetailPage
+export default React.memo(DetailPage)

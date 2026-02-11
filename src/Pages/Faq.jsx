@@ -1,7 +1,7 @@
-import React from "react";
+import React,{memo} from "react";
 import data from "../data/FaqData.json";
-import { Accordion } from "../Components/common/Accordion";
-import { Footer } from "../Components/common/Footer";
+import { Accordion } from "../components/organisms/Accordion";
+import { Footer } from "../components/organisms/Footer";
 
 const Faq = () => {
   return (
@@ -25,4 +25,4 @@ const Faq = () => {
   );
 };
 
-export default Faq
+export default React.memo(Faq)

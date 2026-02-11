@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, memo } from "react";
 import { FaBoxOpen } from "react-icons/fa";
 import { MdUploadFile } from "react-icons/md";
-import { Footer } from "../Components/common/Footer";
+import { Footer } from "../components/organisms/Footer";
 import Lottie from "lottie-react";
 import returnAnimation from "../assets/Animations/return.json";
 import { Link } from "react-router-dom";
@@ -18,14 +18,14 @@ const Return = () => {
 
   // login id
     const userId = JSON.parse(localStorage.getItem("LoginId"))
-    console.log("login Id", userId)
+    // console.log("login Id", userId)
 
 
   // order id from local storage
   useEffect(() => {
     const orderPlaced = JSON.parse(localStorage.getItem(`orders_${userId}`)) || [];
     setSavedOrders(orderPlaced);
-    console.log(`order plced : ${orderPlaced}`)
+    // console.log(`order plced : ${orderPlaced}`)
   }, []);
 
 
@@ -138,7 +138,7 @@ const Return = () => {
               id = "orderId"
                 value={orderId}
                 onChange={(e) => setOrderId(e.target.value)}
-                className="w-full px-4 py-3 mt-2 border rounded-lg outline-none"
+                className="w-full px-4 py-3 mt-2 border rounded-lg outline-none focus-visible:ring-2 focus-visible:ring-black"
                 required
               >
                 <option value="">Select Order ID</option>
@@ -151,7 +151,7 @@ const Return = () => {
             </div>
 
             <div>
-              <label htmlfor="returnReason" className="text-sm font-semibold text-gray-700">
+              <label htmlFor="returnReason" className="text-sm font-semibold text-gray-700">
                 Return Reason *
               </label>
 
@@ -159,7 +159,7 @@ const Return = () => {
               id = "returnReason"
                 value={reason}
                 onChange={(e) => setReason(e.target.value)}
-                className="w-full px-4 py-3 mt-2 border rounded-lg outline-none"
+                className="w-full px-4 py-3 mt-2 border rounded-lg outline-none focus-visible:ring-2 focus-visible:ring-black"
                 required
               >
                 <option value="">Select a reason</option>
@@ -183,7 +183,7 @@ const Return = () => {
                 onChange={(e) => setDetails(e.target.value)}
                 rows="4"
                 placeholder="Explain your issue (min 20 chars)"
-                className={`w-full mt-2 px-4 py-3 border rounded-lg resize-none outline-none ${
+                className={`w-full mt-2 px-4 py-3 border rounded-lg resize-none outline-none focus-visible:ring-2 focus-visible:ring-black ${
                   errors.details ? "border-red-500" : "border-gray-300"
                 }`}
                 required
@@ -195,8 +195,8 @@ const Return = () => {
             </div>
 
             <div>
-              <label htmlfor="img" className="text-sm font-semibold text-gray-700">
-                Upload Product Image (optional)
+              <label htmlFor="img" className="text-sm font-semibold text-gray-700">
+                Upload Product Image*
               </label>
 
               <div className="flex items-center gap-3 mt-2 bg-gray-50 border border-gray-300 rounded-lg p-3">
@@ -218,7 +218,7 @@ const Return = () => {
 
             <button
               type="submit"
-              className="w-full py-3 mt-6 rounded-lg bg-black text-white font-semibold text-lg shadow-md hover:bg-gray-800 transition"
+              className="w-full py-3 mt-6 rounded-lg bg-black text-white font-semibold text-lg shadow-md hover:bg-gray-800 transition focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2 focus-visible:ring-offset-white   "
             >
               Submit
             </button>
@@ -231,4 +231,4 @@ const Return = () => {
   );
 };
 
-export default Return
+export default React.memo(Return)

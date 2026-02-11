@@ -17,5 +17,5 @@ server.get("/", (req, res) => {
 });
 
 server.listen(PORT, () => {
-  console.log("JSON Server running on port", PORT);
+  // console.log("JSON Server running on port", PORT);
 });

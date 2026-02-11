@@ -1,7 +1,7 @@
-import React from "react";
+import React, {memo} from "react";
 import { MdLocationOn, MdEmail, MdPhone } from "react-icons/md";
-import { Navbar } from "../Components/common/Navbar";
-import { Footer } from "../Components/common/Footer"
+import  Navbar  from "../components/organisms/Navbar";
+import { Footer } from "../components/organisms/Footer"
 
 const Contact = () => {
   return (
@@ -113,4 +113,4 @@ const Contact = () => {
   );
 };
 
-export default Contact
+export default React.memo(Contact)

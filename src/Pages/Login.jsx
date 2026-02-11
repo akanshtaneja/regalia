@@ -1,6 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, memo } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { IoEyeOffOutline, IoEyeOutline } from "react-icons/io5";
+import Lottie from "lottie-react";
+import loader from "../assets/Animations/Trailloading.json";
 import axios from "axios";
 
 const Login = ({setUser}) => {
@@ -8,6 +10,8 @@ const Login = ({setUser}) => {
   const [formErrors, setFormErrors] = useState({});
   const [apiMessage, setApiMessage] = useState("");
   const [showPassword, setShowPassword] = useState(false);
+  const [loading, setLoading] = useState(false);
+  
 
   const navigate = useNavigate();
 
@@ -40,6 +44,7 @@ const Login = ({setUser}) => {
     const errors = validate();
     setFormErrors(errors);
     if (Object.keys(errors).length) return;
+    setLoading(true);
 
     axios
       .post("https://capstone-akansh.onrender.com/validatePassword", {
@@ -110,12 +115,22 @@ const Login = ({setUser}) => {
           </div>
 
           {/* button */}
-          <button
-            type="submit"
-            className="w-full bg-black text-white py-2 rounded-md hover:bg-gray-900"
-          >
-            Login
-          </button>
+          {!loading ? (
+            <button
+              type="submit"
+              className="w-full bg-black text-white py-2 rounded-md hover:bg-gray-900"
+            >
+              Login
+            </button>
+          ) : (
+            <div className="w-full flex justify-center">
+              <Lottie
+                animationData={loader}
+                style={{ height: 60 }}
+                loop={true}
+              />
+            </div>
+          )}
 
           {/* api msg */}
           {apiMessage && (
@@ -142,4 +157,4 @@ const Login = ({setUser}) => {
 };
 
 
-export default Login
+export default React.memo(Login)

@@ -1,8 +1,8 @@
-import React from "react";
-import { Footer } from "../Components/common/Footer";
+import React, {memo} from "react";
+import { Footer } from "../components/organisms/Footer";
 import { Link } from "react-router-dom";
-import { useWishlist } from "../Context/WishlistContext";
-import { useCart } from "../Context/CartContext";
+import { useWishlist } from "../context/WishlistContext";
+import { useCart } from "../context/CartContext";
 import { CiHeart } from "react-icons/ci";
 import { FaHeart } from "react-icons/fa6";
 
@@ -111,4 +111,4 @@ const Wishlist = () => {
 };
 
 
-export default Wishlist
+export default React.memo(Wishlist)

@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, memo } from "react";
 import { Link } from "react-router-dom";
-import { Footer } from "../Components/common/Footer";
+import { Footer } from "../components/organisms/Footer";
 import { CiShoppingCart } from "react-icons/ci";
 
 const Order = () => {
@@ -8,7 +8,7 @@ const Order = () => {
 
   // login id
   const userId = JSON.parse(localStorage.getItem("LoginId"));
-  console.log("login Id", userId);
+  // console.log("login Id", userId);
 
   useEffect(() => {
     const orderPlaced =
@@ -144,4 +144,4 @@ const Order = () => {
   );
 };
 
-export default Order
+export default React.memo(Order)

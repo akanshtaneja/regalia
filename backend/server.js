@@ -1,7 +1,10 @@
+
+
 const express = require ('express')
 const app = express()
 const cors = require('cors')
 const sqlite3 = require('sqlite3').verbose()
+
 
 app.use(cors())
 app.use((req, res, next)=>{
@@ -12,9 +15,9 @@ app.use((req, res, next)=>{
 // db connection
 let db = new sqlite3.Database('database.db', (err)=>{
   if (err){
-    console.log(err)
+    // console.log(err)
   }
-  console.log("Connected to the access database.")
+  // console.log("Connected to the access database.")
 })
 
 app.use(express.json({limit:'10mb'}))
@@ -48,10 +51,10 @@ app.post('/signup', (req, res) => {
   if (!name || !phone || !email || !password){
     return res.status(400).json({message: "All fields are required"})
   }
-  const query = `INSERT INTO users (name, phone, email, password) VALUES(?,?,?,?)`
+  const query = `INSERT INTO users (name, phone, email, password ) VALUES(?,?,?,?)`
   db.run(query, [name, phone, email, password], (err)=>{
     if(err){
-      console.log(err)
+      // console.log(err)
        // already email exist
       if(err.message.includes("UNIQUE")){
       return res.status(500).json({message: "Email already exists"})

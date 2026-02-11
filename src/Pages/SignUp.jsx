@@ -1,6 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, memo } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { IoEyeOffOutline, IoEyeOutline } from "react-icons/io5";
+import Lottie from "lottie-react";
+import loader from "../assets/Animations/Trailloading.json";
 import axios from "axios";
 
 const SignUp = () => {
@@ -13,6 +15,7 @@ const SignUp = () => {
     confirmPassword: "",
   });
 
+  const [loading, setLoading] = useState(false);
   const [formErrors, setFormErrors] = useState({});
   const [apiMessage, setApiMessage] = useState("");
   const navigate = useNavigate();
@@ -22,8 +25,7 @@ const SignUp = () => {
     setFormValues({ ...formValues, [name]: value });
   };
 
-
-// form validationn
+  // form validationn
   const validate = () => {
     const errors = {};
     const emailRegex = /\S+@\S+\.\S+/;
@@ -33,23 +35,20 @@ const SignUp = () => {
     }
     if (!formValues.phone) {
       errors.phone = "Phone required";
-    } 
+    }
 
-    if (!formValues.email){
+    if (!formValues.email) {
       errors.email = "Email required";
-    } 
-    else if (!emailRegex.test(formValues.email)){
+    } else if (!emailRegex.test(formValues.email)) {
       errors.email = "Invalid email";
     }
-      
 
     if (!formValues.password) {
       errors.password = "Password required";
     }
-    if (!formValues.confirmPassword){
+    if (!formValues.confirmPassword) {
       errors.confirmPassword = "Confirm password required";
-    }
-    else if (formValues.password !== formValues.confirmPassword){
+    } else if (formValues.password !== formValues.confirmPassword) {
       errors.confirmPassword = "Passwords do not match";
     }
     return errors;
@@ -60,6 +59,8 @@ const SignUp = () => {
     const errors = validate();
     setFormErrors(errors);
     if (Object.keys(errors).length) return;
+
+    setLoading(true);
 
     axios
       .post("https://capstone-akansh.onrender.com/signup", formValues)
@@ -78,18 +79,18 @@ const SignUp = () => {
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100 px-4">
       <div className="w-[400px] bg-white p-6 rounded-lg shadow-md border">
-
         <h2 className="text-2xl font-semibold text-gray-800 mb-6 text-center">
           Sign Up
         </h2>
 
         <form className="space-y-5" onSubmit={handleSignup}>
-
           {/* Name */}
           <div>
-            <label htmlFor='name' className="text-sm text-gray-700">Name</label>
+            <label htmlFor="name" className="text-sm text-gray-700">
+              Name
+            </label>
             <input
-              id='name'
+              id="name"
               type="text"
               name="name"
               value={formValues.name}
@@ -101,9 +102,11 @@ const SignUp = () => {
 
           {/* Phone */}
           <div>
-            <label htmlFor='phone' className="text-sm text-gray-700">Phone</label>
+            <label htmlFor="phone" className="text-sm text-gray-700">
+              Phone
+            </label>
             <input
-              id='phone'
+              id="phone"
               type="text"
               name="phone"
               value={formValues.phone}
@@ -115,9 +118,11 @@ const SignUp = () => {
 
           {/* Email */}
           <div>
-            <label htmlFor="email" className="text-sm text-gray-700">Email</label>
+            <label htmlFor="email" className="text-sm text-gray-700">
+              Email
+            </label>
             <input
-              id='email'
+              id="email"
               type="email"
               name="email"
               value={formValues.email}
@@ -129,10 +134,12 @@ const SignUp = () => {
 
           {/* Password */}
           <div>
-            <label htmlFor='password' className="text-sm text-gray-700">Password</label>
+            <label htmlFor="password" className="text-sm text-gray-700">
+              Password
+            </label>
             <div className="relative">
               <input
-                id='password'
+                id="password"
                 type={showPassword ? "text" : "password"}
                 name="password"
                 value={formValues.password}
@@ -151,9 +158,11 @@ const SignUp = () => {
 
           {/* Confirm Password */}
           <div>
-            <label htmlFor="confirmPassword" className="text-sm text-gray-700">Confirm Password</label>
+            <label htmlFor="confirmPassword" className="text-sm text-gray-700">
+              Confirm Password
+            </label>
             <input
-              id='confirmPassword'
+              id="confirmPassword"
               type="password"
               name="confirmPassword"
               value={formValues.confirmPassword}
@@ -164,17 +173,28 @@ const SignUp = () => {
           </div>
 
           {/* Signup Button */}
-          <button
-            type="submit"
-            className="w-full bg-black text-white py-2 rounded-md hover:bg-gray-900"
-          >
-            Sign Up
-          </button>
+          {!loading ? (
+            <button
+              type="submit"
+              className="w-full bg-black text-white py-2 rounded-md hover:bg-gray-900"
+            >
+              Sign Up
+            </button>
+          ) : (
+            <div className="w-full flex justify-center">
+              <Lottie
+                animationData={loader}
+                style={{ height: 60 }}
+                loop={true}
+              />
+            </div>
+          )}
 
           {/* API MSG*/}
           {apiMessage && (
             <p
-              className={`text-center text-sm ${apiMessage === "Signup Successful"
+              className={`text-center text-sm ${
+                apiMessage === "Signup Successful"
                   ? "text-green-600"
                   : "text-red-500"
               }`}
@@ -189,11 +209,10 @@ const SignUp = () => {
           <Link to="/login" className="text-black ml-1 hover:underline">
             Login
           </Link>
-
         </p>
       </div>
     </div>
   );
 };
 
-export default SignUp
+export default React.memo(SignUp);
