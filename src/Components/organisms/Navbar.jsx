@@ -263,3 +263,4 @@ const Navbar = ({ user, setUser }) => {
 };
 
 export default React.memo(Navbar);
+       

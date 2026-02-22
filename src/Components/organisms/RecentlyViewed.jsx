@@ -8,7 +8,7 @@ export const RecentlyViewed = () => {
     
   const items = useMemo(() => {
     return GetRecentlyViewed();
-  }, []);
+  }, []);                                                                                                                                                                
 
   if (!items || items.length === 0) {
     return null;
@@ -30,7 +30,7 @@ export const RecentlyViewed = () => {
           </div>
 
           {/* products */}
-          <div className="flex gap-2 overflow-x-auto scrollbar-hide">
+          <div className="flex gap-2 overflow-x-auto scrollbar-hide"> 
             {items.map((item) => (
               <div
                 key={item.id}
