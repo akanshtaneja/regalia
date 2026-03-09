@@ -16,7 +16,7 @@ import { MdArrowForwardIos } from "react-icons/md";
 import { FindSize } from "../components/organisms/FindSize";
 import { QuantityButton } from "../components/atoms/QuantityButton";
 import  MiniCart  from "./MiniCart";
-import { DetailPageShimmer } from "../Components/Shimmer/DetailPageShimmer";
+import { DetailPageShimmer } from "../components/Shimmer/DetailPageShimmer";
 
 const DetailPage = () => {
   const { cartItems, addToCart, updateCartQuantity } = useCart();
