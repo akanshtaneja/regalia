@@ -12,18 +12,18 @@ import { CartProvider } from "./context/CartContext.jsx";
 import { LocationProvider } from "./context/LocationContext.jsx";
 import { Protected } from "./routes/Protected.jsx";
 import { WishlistProvider } from "./context/WishlistContext.jsx";
-import { Home } from "./Pages/Home.jsx";
-const Login = lazy(() => import("./Pages/Login.jsx"));
-const Products = lazy(() => import("./Pages/Products.jsx"));
-const About = lazy(() => import("./Pages/About.jsx"));
-const Contact = lazy(() => import("./Pages/Contact.jsx"));
+import { Home } from "./pages/Home.jsx";
+const Login = lazy(() => import("./pages/Login.jsx"));
+const Products = lazy(() => import("./pages/Products.jsx"));
+const About = lazy(() => import("./pages/About.jsx"));
+const Contact = lazy(() => import("./pages/Contact.jsx"));
 const Payment = lazy(() => import("./components/organisms/Payment.jsx"));
-const Return = lazy(() => import("./Pages/Return.jsx"));
-const Faq = lazy(() => import("./Pages/Faq.jsx"));
-const Order = lazy(() => import("./Pages/Order.jsx"));
-const SignUp = lazy(() => import("./Pages/SignUp.jsx"));
-const Wishlist = lazy(() => import("./Pages/Wishlist.jsx"));
-const DetailPage = lazy(() => import("./Pages/DetailPage.jsx"));
+const Return = lazy(() => import("./pages/Return.jsx"));
+const Faq = lazy(() => import("./pages/Faq.jsx"));
+const Order = lazy(() => import("./pages/Order.jsx"));
+const SignUp = lazy(() => import("./pages/SignUp.jsx"));
+const Wishlist = lazy(() => import("./pages/Wishlist.jsx"));
+const DetailPage = lazy(() => import("./pages/DetailPage.jsx"));
 
 function App() {
 

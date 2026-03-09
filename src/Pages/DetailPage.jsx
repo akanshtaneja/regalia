@@ -15,7 +15,7 @@ import DetailPageDescription  from "../components/organisms/DetailPageDescriptio
 import { MdArrowForwardIos } from "react-icons/md";
 import { FindSize } from "../components/organisms/FindSize";
 import { QuantityButton } from "../components/atoms/QuantityButton";
-import  MiniCart  from "../pages/MiniCart";
+import  MiniCart  from "./MiniCart";
 import { DetailPageShimmer } from "../Components/Shimmer/DetailPageShimmer";
 
 const DetailPage = () => {
